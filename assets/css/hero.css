@@ -1,0 +1,39 @@
+.herogif img {
+    width: 100%;
+    height: auto;
+  }
+
+  .herogif {
+    position: relative;
+  }
+
+  .clip::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(
+      0,
+      33,
+      71,
+      0.5
+    ); /* Add your desired background color */
+    -webkit-clip-path: polygon(61% 1%, 42% 100%, 0% 100%, 0% 0%);
+    clip-path: polygon(61% 1%, 42% 100%, 0% 100%, 0% 0%);
+    z-index: -1;
+  }
+  .bgheroo {
+    position: relative;
+    background-image: url("./../img/iit-compressed.jpg");
+    background-size: cover;
+    z-index: -2 !important;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .clip::before {
+      -webkit-clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+      clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+    }
+  }
