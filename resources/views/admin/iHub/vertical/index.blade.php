@@ -281,7 +281,7 @@
             $('#edit_subtitle').val(subtitle);
             $("#edit_description").summernote('code', description);
             $('#status').val(status);
-            $('#showEditImage').attr('src', '/public/uploads//vertical/' + image);
+            $('#showEditImage').attr('src', './public/uploads//vertical/' + image);
             $('#showEditImage').removeClass('d-none');
 
         });

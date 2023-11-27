@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iHub | Admin</title>
-    <link href="./../adminpanel/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('adminpanel/css/bootstrap.min.css')}}" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <link href="./../adminpanel/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="./../adminpanel/css/animate.css" rel="stylesheet">
-    <link href="./../adminpanel/css/style.css" rel="stylesheet">
+    <link href="{{asset('adminpanel/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
+    <link href="{{asset('adminpanel/css/animate.css')}}" rel="stylesheet">
+    <link href="{{asset('adminpanel/css/style.css')}}" rel="stylesheet">
 
 </head>
 

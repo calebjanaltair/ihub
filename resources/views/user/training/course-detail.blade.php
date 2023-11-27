@@ -19,7 +19,7 @@
       <div class="row">
         <div class="col-lg-8">
           <div class="">
-            <img src="./../public/uploads/Courses/{{$course->image}}" alt="Hero Image" class="py-2" width="100%" height="auto">
+            <img src="{{asset('public/uploads/Courses/' . $course->image)}}" alt="Hero Image" class="py-2" width="100%" height="auto">
 
             <div class="hero-text">
 
@@ -76,7 +76,7 @@
 
           <div class="course-info d-flex justify-content-between align-items-center">
             <h5>Program Fee</h5>
-            <p>Rs 165/.</p>
+            <p>Rs {{$course->fee}}</p>
           </div>
 
           <div class="course-info d-flex justify-content-between align-items-center">
@@ -415,7 +415,7 @@
           <div class="swiper-slide">
             <div class="testimonial-wrap">
               <div class="testimonial-item manage">
-                <img src="./../public/uploads/CourseTestimonials/{{$testimonial->image}}" style="background-color: darkgray;object-fit: fill;" class="testimonial-img" alt="">
+                <img src="{{asset('/public/uploads/CourseTestimonials/' . $testimonial->image)}}" style="background-color: darkgray;object-fit: fill;" class="testimonial-img" alt="">
                 <h3>
                   {{$testimonial->name}}
                 </h3>
@@ -443,10 +443,10 @@
 
 
 
-  <section class="outerrr">
-    <div class="container">
-      <div class="row">
-        <div class="section-title p-0">
+  <section class="outerrr my-4">
+    <div class="container my-4">
+      <div class="row my-4">
+        <div class="section-title p-0 my-4">
           <h2>NEWS & UPDATES</h2>
           <p>Career Transitions</p>
         </div>
@@ -469,7 +469,7 @@
                     <div class="swiper-slide">
                       <div class="testimonial-wrap">
                         <div class="testimonial-item manage">
-                          <img src="./../public/uploads/Coursetransition/{{$testimonial->image}}" style="background-color: darkgray; object-fit: fill;" class="testimonial-img" alt="">
+                          <img src="{{asset('/public/uploads/Coursetransition/' . $testimonial->image)}}" style="background-color: darkgray; object-fit: fill;" class="testimonial-img" alt="">
                           <h3>{{$testimonial->name}}</h3>
                           <h4>{{$testimonial->title}}</h4>
                           <p>
@@ -932,18 +932,18 @@
         @foreach($featureds as $featured)
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
           <div class="course-item">
-            <img src="./public/uploads/Courses/{{$featured->image}}" class="img-fluid" alt="...">
+            <img src="{{asset('/public/uploads/Courses/' . $featured->image)}}" class="img-fluid" alt="...">
             <div class="course-content">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <h4 class="{{$featured->type == 1 ? 'different' : ''}}"> {{$featured->type == 1 ? 'Certificate' : ' Internship'}}</h4>
                 <p class="price">Rs. {{$featured->fee}}/-</p>
               </div>
 
-              <h3><a href="/training-courseDetails/{{$featured->id}}">{{$featured->title}}</a></h3>
+              <h3><a href="{{ route('training.courseDetails', ['id' => $featured->id]) }}">{{$featured->title}}</a></h3>
               <p>{{$featured->subtitle}}</p>
               <div class="trainer d-flex justify-content-between align-items-center">
                 <div class="trainer-profile d-flex align-items-center">
-                  <img src="./public/uploads/Company/{{returnCompanyimage($featured->company_id)}}" class="img-fluid" alt="">
+                  <img src="{{asset('/public/uploads/Company/' . returnCompanyimage($featured->company_id))}}" class="img-fluid" alt="">
                   <span>{{returnCompanyName($featured->company_id)}}</span>
                 </div>
                 <div class="trainer-rank d-flex align-items-center">

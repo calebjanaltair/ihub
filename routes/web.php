@@ -30,7 +30,10 @@ use App\Http\Controllers\Training\TrainingLeadsController;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\Blog\BlogController;
 use App\Http\Controllers\Blog\CategoryController;
-
+use App\Http\Controllers\Fellowships\FellowshipController;
+use App\Http\Controllers\Consultancy\OurServicesController;
+use App\Http\Controllers\Consultancy\WhyUsController;
+use App\Http\Controllers\Consultancy\ConsultancyLeadsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,16 +48,13 @@ use App\Http\Controllers\Blog\CategoryController;
 // Main Routes
 
 Route::get('/clear', function () {
-    Artisan::call('cache:clear');
-    Artisan::call('config:clear');
-    Artisan::call('view:clear');
+    Artisan::call('optimize:clear');
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
 
-Route::get('/fellowships', function () {
-    return view('fellowships');
-})->name('fellowships');
+Route::get('/consultants', [HomeController::class, 'consultants'])->name('consultants');
+
 Route::get('/administration', [HomeController::class, 'administration'])->name('administration');
 Route::get('/collaborations', [HomeController::class, 'collaborations'])->name('collaborations');
 Route::get('/hackathon', [HomeController::class, 'hackathon'])->name('hackathon');
@@ -76,6 +76,9 @@ Route::post('/feedbackmail', [ContactController::class, 'feedbackmail'])->name('
 Route::get('startups', [HomeController::class, 'startups'])->name('startups');
 Route::post('/download-brochure', [LeadsController::class, 'download_brochure'])->name('download-brochure');
 
+Route::get('fellowships', [HomeController::class, 'fellowships'])->name('fellowships');
+Route::post('/download-fellowship-brochure', [FellowshipController::class, 'download_fellowship_brochure'])->name('download-fellowship-brochure');
+
 
 
 // Training Routes
@@ -83,7 +86,7 @@ Route::post('/download-brochure', [LeadsController::class, 'download_brochure'])
 Route::get('/training', [HomeController::class, 'training'])->name('training');
 Route::get('/training-about', [HomeController::class, 'about'])->name('training-about');
 Route::get('/training-courses', [HomeController::class, 'courses'])->name('training-courses');
-Route::get('/training-courseDetails/{id}', [HomeController::class, 'courseDetails'])->name('training-courseDetails');
+Route::get('/training-courseDetails/{id}', [HomeController::class, 'courseDetails'])->name('training.courseDetails');
 Route::get('/training-contact', [HomeController::class, 'contactCourse'])->name('training-contact');
 Route::post('training-contactus', [TrainingContactController::class, 'contact'])->name('training-contactus');
 Route::post('training-lead', [TrainingLeadsController::class, 'store'])->name('training-lead');
@@ -123,7 +126,7 @@ Route::post('/navNews-update', [App\Http\Controllers\iHub\navNewsController::cla
 Route::get('/hackathonView', [App\Http\Controllers\iHub\HackathonController::class, 'index'])->name('hackathonView');
 Route::post('/hackathon-update', [App\Http\Controllers\iHub\HackathonController::class, 'update'])->name('hackathon-update');
 
-Route::get('/ihub-news-all', [App\Http\Controllers\iHub\iHubNewsController::class, 'index'])->name('iHub-News-&-Events');
+Route::get('/ihub-news-all', [App\Http\Controllers\iHub\iHubNewsController::class, 'index'])->name('ihub-news-all');
 Route::get('/ihub-news-addscreen', [App\Http\Controllers\iHub\iHubNewsController::class, 'addscreen'])->name('ihub-news-addscreen');
 Route::post('/ihub-news-add', [App\Http\Controllers\iHub\iHubNewsController::class, 'store'])->name('ihub-news-add');
 Route::post('/ihub-news-update', [App\Http\Controllers\iHub\iHubNewsController::class, 'update'])->name('ihub-news-update');
@@ -215,6 +218,36 @@ Route::post('/startup-programs-update', [ProgramController::class, 'update'])->n
 Route::post('/startup-programs-delete', [ProgramController::class, 'delete'])->name('startup-programs-delete');
 Route::post('/startup-programs-deactivate', [ProgramController::class, 'deactivate'])->name('startup-programs-deactivate');
 Route::post('/startup-programs-activate', [ProgramController::class, 'activate'])->name('startup-programs-activate');
+
+
+Route::get('/fellowship-programs', [FellowshipController::class, 'index'])->name('fellowship-programs');
+Route::post('/fellowship-programs-store', [FellowshipController::class, 'store'])->name('fellowship-programs-store');
+Route::post('/fellowship-programs-update', [FellowshipController::class, 'update'])->name('fellowship-programs-update');
+Route::post('/fellowship-programs-delete', [FellowshipController::class, 'delete'])->name('fellowship-programs-delete');
+Route::post('/fellowship-programs-deactivate', [FellowshipController::class, 'deactivate'])->name('fellowship-programs-deactivate');
+Route::post('/fellowship-programs-activate', [FellowshipController::class, 'activate'])->name('fellowship-programs-activate');
+
+
+// Consultancy Services
+
+Route::get('/consultancy-service', [OurServicesController::class, 'index'])->name('consultancy-service');
+Route::post('/consultancy-service-store', [OurServicesController::class, 'store'])->name('consultancy-service-store');
+Route::post('/consultancy-service-update', [OurServicesController::class, 'update'])->name('consultancy-service-update');
+Route::post('/consultancy-service-delete', [OurServicesController::class, 'delete'])->name('consultancy-service-delete');
+Route::post('/consultancy-service-deactivate', [OurServicesController::class, 'deactivate'])->name('consultancy-service-deactivate');
+Route::post('/consultancy-service-activate', [OurServicesController::class, 'activate'])->name('consultancy-service-activate');
+
+// Why Us
+
+Route::get('/consultancy-whyus', [WhyUsController::class, 'index'])->name('consultancy-whyus');
+Route::post('/consultancy-whyus-store', [WhyUsController::class, 'store'])->name('consultancy-whyus-store');
+Route::post('/consultancy-whyus-update', [WhyUsController::class, 'update'])->name('consultancy-whyus-update');
+Route::post('/consultancy-whyus-delete', [WhyUsController::class, 'delete'])->name('consultancy-whyus-delete');
+Route::post('/consultancy-whyus-deactivate', [WhyUsController::class, 'deactivate'])->name('consultancy-whyus-deactivate');
+Route::post('/consultancy-whyus-activate', [WhyUsController::class, 'activate'])->name('consultancy-whyus-activate');
+
+// Consultancy Lead
+Route::post('/consultancyRecord', [ConsultancyLeadsController::class, 'store'] )->name('consultancyRecord');
 
 
 // Training Homepage Testimonials

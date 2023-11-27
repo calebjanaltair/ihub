@@ -9,7 +9,7 @@
         <div class="ibox">
             <div class="ibox-title d-flex justify-content-between align-items-center">
                 <h5>Edit News & Events Card</h5>
-                <a class="btn btn-primary" href="/ihub-news-all"><i class="fa fa-arrow-left"> </i> All Records</a>
+                <a class="btn btn-primary" href="{{route('ihub-news-all')}}"><i class="fa fa-arrow-left"> </i> All Records</a>
 
             </div>
             <div class="ibox-content">
@@ -74,7 +74,7 @@
                                 </div>
                             </div>
                             <div id="cropContainer my-auto">
-                                <img id="cropImage" src="/public/uploads//news/{{$news->image}}" alt="Croppable Image">
+                                <img id="cropImage" src="{{asset('/public/uploads/news/' . $news->image)}}" alt="Croppable Image">
                             </div>
                         </div>
                     </div>

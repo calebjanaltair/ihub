@@ -90,7 +90,7 @@
                             </div>
                         </div>
                         <div class="col my-auto">
-                            <img id="Demoimage" src="/public/uploads//Courses/{{$course->image}}" style="width: 550px; height: auto;" alt="Croppable Image">
+                            <img id="Demoimage" src="{{asset('/public/uploads/Courses/' . $course->image)}}" style="width: 550px; height: auto;" alt="Croppable Image">
 
                             <div id="cropContainer my-auto">
                                 <img id="cropImage" src="" style="display: none;" alt="Croppable Image">
@@ -353,7 +353,7 @@
 
         // d-none the demoimage and add {{$course->image}} to the show image and show it
         $('#Demoimage').addClass('d-none');
-        $('#cropImage').attr('src', '/public/uploads//Courses/{{$course->image}}');
+        $('#cropImage').attr('src', '{{asset("/public/uploads/Courses/" . $course->image)}}');
         $('#cropImage').removeAttr('style');
 
 

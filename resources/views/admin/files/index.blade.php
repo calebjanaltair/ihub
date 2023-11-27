@@ -36,10 +36,10 @@
                             @foreach($files as $file)
                             <tr class="gradeX" style="cursor: pointer;">
                                 <td>{{$loop->iteration}}</td>
-                                <td><a href="{{ asset($file->file_path) }}" target="_blank">{{$file->name}}</a></td>
+                                <td><a href="{{ asset('/public/' . $file->file_path) }}" target="_blank">{{$file->name}}</a></td>
 
                                 <td class="">
-                                    <button type="button" class="btn btn-dark btn-sm btn-block" onclick="copier('{{ asset($file->file_path) }}')">
+                                    <button type="button" class="btn btn-dark btn-sm btn-block" onclick="copier('{{ asset('/public/' . $file->file_path) }}')">
                                         <i class="fa fa-edit"> </i> Copy
                                     </button>
                                     <button class="btn btn-danger btn-sm btn-block delete-button" data-id="{{$file->id}}">

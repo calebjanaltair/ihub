@@ -272,7 +272,7 @@
             $('#edit_id').val(id);
             $('#status').val(status);
             $('#type').val(type);
-            $('#showEditImage').attr('src', '/public/uploads/colab/' + image);
+            $('#showEditImage').attr('src', './public/uploads/colab/' + image);
             $('#showEditImage').removeClass('d-none');
 
         });

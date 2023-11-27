@@ -264,7 +264,7 @@
             $('#edit_id').val(id);
             $('#status').val(status);
             $("#edit_description").summernote('code', description);
-            $('#showEditImage').attr('src', '/public/uploads//isp/' + image);
+            $('#showEditImage').attr('src', './public/uploads//isp/' + image);
             $('#showEditImage').removeClass('d-none');
 
         });

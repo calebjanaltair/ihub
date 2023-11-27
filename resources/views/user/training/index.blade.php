@@ -10,8 +10,8 @@
       <h2>A joint initiative of the Government of India Department of Science & Technology (DST) and Indian Institute of Technology (IIT Roorkee).</h2>
       <a href="courses.html" class="btn-get-started">Get Started</a><br><br><br>
 
-      <a href="index.html"><img src="/training-assets/assets/img/nmicpswhite.png" alt="" style="max-width: 130px;" class="img-fluid"></a>
-      <a href="index.html"><img src="/training-assets/assets/img/dst-logo1.jpg" alt="" style="background-color: white;max-width: 250px;" class="img-fluid"></a>
+      <a href="index.html"><img src="{{asset('/training-assets/assets/img/nmicpswhite.png')}}" alt="" style="max-width: 130px;" class="img-fluid"></a>
+      <a href="index.html"><img src="{{asset('/training-assets/assets/img/dst-logo1.jpg')}}" alt="" style="background-color: white;max-width: 250px;" class="img-fluid"></a>
 
     </div>
   </div>
@@ -44,7 +44,7 @@
               <p>{{$course->subtitle}}</p>
               <div class="trainer d-flex justify-content-between align-items-center">
                 <div class="trainer-profile d-flex align-items-center">
-                  <img src="./public/uploads/Company/{{returnCompanyimage($course->company_id)}}" class="img-fluid" alt="">
+                  <img src="{{asset('/public/uploads/Company/' . returnCompanyimage($course->company_id))}}" class="img-fluid" alt="">
                   <span>{{returnCompanyName($course->company_id)}}</span>
                 </div>
                 <div class="trainer-rank d-flex align-items-center">
@@ -70,7 +70,7 @@
 
       <div class="row">
         <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-          <img src="/training-assets/assets/img/ihub.gif" style="background-color: #2a2a72;
+          <img src="{{asset('/training-assets/assets/img/ihub.gif')}}" style="background-color: #2a2a72;
 background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);" class="img-fluid" alt="">
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
@@ -278,7 +278,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);" class="img-
           <div class="swiper-slide">
             <div class="testimonial-wrap">
               <div class="testimonial-item manage">
-                <img src="./public/uploads/HT/{{$testimonial->image}}" style="background-color: darkgray;object-fit: fill;" class="testimonial-img" alt="">
+                <img src="{{asset('/public/uploads/HT/' . $testimonial->image)}}" style="background-color: darkgray;object-fit: fill;" class="testimonial-img" alt="">
                 <h3>
                   {{$testimonial->name}}
                 </h3>

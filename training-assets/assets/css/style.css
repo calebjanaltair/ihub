@@ -783,12 +783,12 @@ p.para {
 }
 
 #hero .container {
-  padding-top: 72px;
+  padding-top: 300px;
 }
 
 @media (max-width: 992px) {
   #hero .container {
-    padding-top: 62px;
+    padding-top: 300px;
   }
 }
 

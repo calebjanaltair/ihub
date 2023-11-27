@@ -65,7 +65,7 @@
     </div>
     <div class="row">
         <div class="col-lg-4">
-        <img src="/public/uploads/isp/{{$isp->image}}" width="100%" alt="">
+        <img src="{{asset('/public/uploads/isp/' .$isp->image)}}" width="100%" alt="">
 
 </div>
 

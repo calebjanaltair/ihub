@@ -19,7 +19,7 @@
 
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-            <img src="/training-assets/assets/img/ihub.gif" style="background: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);" class="img-fluid" alt="">
+            <img src="{{asset('/training-assets/assets/img/ihub.gif')}}" style="background: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" style="text-align:justify;">
             <h3>A joint initiative of the Government of India Department of Science & Technology (DST) and Indian Institute of Technology (IIT Roorkee).</h3>
@@ -90,7 +90,7 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="./public/uploads/AN/{{$aboutNews->image}}" style="background-color: darkgray;object-fit: fill;" class="testimonial-img" alt="">
+                  <img src="{{asset('/public/uploads/AN/' . $aboutNews->image)}}" style="background-color: darkgray;object-fit: fill;" class="testimonial-img" alt="">
                   <h3>{{$aboutNews->name}}</h3>
                   <h4>{{$aboutNews->title}}</h4>
                   <p>

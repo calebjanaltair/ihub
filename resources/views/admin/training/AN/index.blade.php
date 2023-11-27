@@ -279,7 +279,7 @@
             $('#status').val(status);
             $("#edit_description").summernote('code', description);
             $('#edit_title').val(title);
-            $('#showEditImage').attr('src', '/public/uploads/AN/' + image);
+            $('#showEditImage').attr('src', './public/uploads/AN/' + image);
             $('#showEditImage').removeClass('d-none');
         });
 

@@ -21,7 +21,7 @@
             <div>
                 <div class="ibox-content no-padding border-left-right">
                     <label for="profile_img" style="cursor: pointer; display: block;margin-left: auto;margin-right: auto;width: 200px; height: 200px;">
-                        <img alt="image" class="img-fluid" id="dpShowLabel" style="cursor: pointer; display: block;margin-left: auto;margin-right: auto;width: 200px; height: 200px;" src="{{'./public/uploads/profile/' . ($user->profile_img ?? 'avatar.jpg')}}">
+                        <img alt="image" class="img-fluid" id="dpShowLabel" style="cursor: pointer; display: block;margin-left: auto;margin-right: auto;width: 200px; height: 200px;" src="{{asset('/public/uploads/profile/' . ($user->profile_img ?? 'avatar.jpg'))}}">
                     </label>
                 </div>
                 <div class="ibox-content profile-content">
@@ -50,7 +50,7 @@
                 <h5>User Details</h5>
             </div>
             <div class="ibox-content">
-                <form id="editOtherProfileForm" action="/editOtherProfile" method="post" enctype="multipart/form-data">
+                <form id="editOtherProfileForm" action="{{route('editOtherProfile')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="text" name="id" id="id" value="{{$user->id}}" required hidden>
                     <input type="file" name="profile_img" id="profile_img" class="visually-hidden" accept="image/*" hidden onchange="imageName(this)">
@@ -117,25 +117,5 @@
     }
 </script>
 <script>
-    // function EditFormSubmit() {
-    //     var formData = new FormData($('#editOtherProfileForm')[0]); // Create a FormData object from the form
-
-    //     // Append additional data (if needed)
-    //     formData.append('_token', '{{ csrf_token() }}'); // Add the CSRF token
-
-    //     $.ajax({
-    //         url: '/editOtherProfile',
-    //         type: 'POST',
-    //         data: formData,
-    //         processData: false, // Prevent jQuery from processing the data
-    //         contentType: false, // Set content type to false as FormData handles it
-    //         success: function(response) {
-    //             console.log(response);
-    //         },
-    //         error: function(error) {
-    //             console.error(error);
-    //         }
-    //     });
-    // }
 </script>
 @endsection

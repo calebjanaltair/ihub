@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Collaborations & Activities</title>
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
-    <link rel="stylesheet" href="assets/css/collabration.css">
-
+    <link rel="stylesheet" href="{{asset('assets/css/collabration.css')}}">
     <!-- BootStrap 5 cdn -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- BootStrap 5 cdn -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/hero.css">
+    
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/hero.css')}}">
     <link href="/assets/css/loader.css" rel="stylesheet">
     <div id="preloader"></div>
 </head>
@@ -25,10 +25,10 @@
 
     <nav class="navbar navbar-light bg-light navbar-expand-md fixed-top elementbg">
         <div class="container-fluid">
-            <span class="navbar-brand " href="/">
+            <span class="navbar-brand " href="{{route('welcome')}}">
 
-                <h1><a href="/" class="logo"><img src="./assets/img/logo.png" style="height: 45px; width: 55px;"></a>
-                    <a href="/" class="logo mt-3"> i<font color="#ff914d">HUB</font> Divya<font color="#ff914d">Sampark
+                <h1><a href="{{route('welcome')}}" class="logo"><img src="{{asset('assets/img/logo.png')}}" style="height: 45px; width: 55px;"></a>
+                    <a href="{{route('welcome')}}" class="logo mt-3"> i<font color="#ff914d">HUB</font> Divya<font color="#ff914d">Sampark
                         </font></a>
                 </h1>
 
@@ -65,27 +65,27 @@
                                 <div class="col-lg-3">
                                     <ul class="expandednavlinks">
                                         <li class="dropdown-header">Initiatives</li>
-                                        <li><a href="/isp">Innovation Support Programs</a></li>
-                                        <li><a href="/csr">Donate Under CSR</a></li>
-                                        <li><a href="/hackathon">Hackathon</a></li>
-                                        <!-- <li><a href="/startups"></a></li> -->
+                                        <li><a href="{{route('isp')}}">Innovation Support Programs</a></li>
+                                        <li><a href="{{route('csr')}}">Donate Under CSR</a></li>
+                                        <li><a href="{{route('hackathon')}}">Hackathon</a></li>
+                                        <!-- <li><a href="{{route('startups')}}startups"></a></li> -->
                                     </ul>
                                 </div>
                                 <div class="col-lg-2">
                                     <ul class="expandednavlinks">
                                         <li class="dropdown-header">Glimpses</li>
-                                        <li><a href="/gallery">Gallery</a></li>
-                                        <li><a href="/collaborations">Collaborations</a></li>
-                                        <li><a href="/collaborations">Activities</a></li>
+                                        <li><a href="{{route('gallery')}}">Gallery</a></li>
+                                        <li><a href="{{route('collaborations')}}">Collaborations</a></li>
+                                        <li><a href="{{route('collaborations')}}">Activities</a></li>
 
                                     </ul>
                                 </div>
                                 <div class="col-lg-2">
                                     <ul class="expandednavlinks">
                                         <li class="dropdown-header">Meet The Tribe</li>
-                                        <li><a href="/administration">Advisors</a></li>
-                                        <li><a href="/administration">Management</a></li>
-                                        <li><a href="/ihub-blogs">Blogs</a></li>
+                                        <li><a href="{{route('administration')}}">Advisors</a></li>
+                                        <li><a href="{{route('administration')}}">Management</a></li>
+                                        <li><a href="{{route('ihub-blogs')}}">Blogs</a></li>
 
                                     </ul>
                                 </div>
@@ -93,7 +93,7 @@
                                     <a href="{{$navNews->link}}" style="text-decoration: none;">
                                         <div class="row">
                                             <div class="col-lg-5">
-                                                <img src="./public/uploads/navNews/{{$navNews->image}}" width="100%" height="auto" alt="">
+                                                <img src="{{asset('/public/uploads/navNews/' .$navNews->image)}}" width="100%" height="auto" alt="">
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="sidecontentnav">
@@ -117,18 +117,18 @@
                                 <div class="col-lg-2">
                                     <ul class="expandednavlinks">
                                         <li class="dropdown-header">Training Services</li>
-                                        <li><a href="/training">
+                                        <li><a href="{{route('training')}}">
                                                 Training Module
                                             </a></li>
-                                        <li><a href="/training-about">About iHub</a></li>
-                                        <li><a href="training-courses">Latest Courses</a></li>
-                                        <li><a href="training-contact">Contact Our Team</a></li>
+                                        <li><a href="{{route('training-about')}}">About iHub</a></li>
+                                        <li><a href="{{route('training-courses')}}">Latest Courses</a></li>
+                                        <li><a href="{{route('training-contact')}}">Contact Our Team</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-lg-5">
                                     <div class="row">
                                         <div class="col-lg-5">
-                                            <img src="./assets/img/certificate.png" width="100%" height="auto" alt="">
+                                            <img src="{{asset('/assets/img/certificate.png')}}" width="100%" height="auto" alt="">
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="sidecontentnav">
@@ -141,7 +141,7 @@
                                 <div class="col-lg-5">
                                     <div class="row">
                                         <div class="col-lg-5">
-                                            <img src="./assets/img/certificate.png" width="100%" height="auto" alt="">
+                                            <img src="{{asset('/assets/img/certificate.png')}}" width="100%" height="auto" alt="">
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="sidecontentnav">
@@ -149,57 +149,6 @@
                                                 <p>Gain expertise in Machine Learning <br> and Artificial Intelligence through <br> an advanced certification</p>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown menu-large">
-                        <a href="#" class="dropdown-toggle make nav-link" data-bs-toggle="dropdown">
-                            Consultancy
-                        </a>
-                        <ul class="dropdown-menu megamenu elementbggradient">
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <ul class="expandednavlinks">
-                                        <li class="dropdown-header">Glyphicons</li>
-                                        <li><a href="#">Available glyphs</a></li>
-                                        <li class="disabled"><a href="#">How to use</a></li>
-                                        <li><a href="#">Examples</a></li>
-                                        <li class="divider"></li>
-                                        <li class="dropdown-header">Dropdowns</li>
-                                        <li><a href="#">Example</a></li>
-                                        <li><a href="#">Alignment options</a></li>
-                                        <li><a href="#">Headers</a></li>
-                                        <li><a href="#">Disabled menu items</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-3">
-                                    <ul class="expandednavlinks">
-                                        <li class="dropdown-header">Glyphicons</li>
-                                        <li><a href="#">Available glyphs</a></li>
-                                        <li class="disabled"><a href="#">How to use</a></li>
-                                        <li><a href="#">Examples</a></li>
-                                        <li class="divider"></li>
-                                        <li class="dropdown-header">Dropdowns</li>
-                                        <li><a href="#">Example</a></li>
-                                        <li><a href="#">Alignment options</a></li>
-                                        <li><a href="#">Headers</a></li>
-                                        <li><a href="#">Disabled menu items</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="card">
-                                        <a href="#" class="thumbnail">
-                                            <img src="http://placehold.it/150x120" />
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="card">
-                                        <a href="#" class="thumbnail">
-                                            <img src="http://placehold.it/150x120" />
-                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -215,16 +164,16 @@
                                     <ul class="expandednavlinks">
                                         <li class="dropdown-header">Startup Programs</li>
                                         @foreach($startups as $startup)
-                                        <li><a href="/startups">{{$startup->name}}</a></li>
+                                        <li><a href="{{route('startups')}}">{{$startup->name}}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>
                                 <div class="col-lg-2">
                                     <ul class="expandednavlinks">
                                         <li class="dropdown-header">Fellowships</li>
-                                        <li><a href="/fellowships">Chanakkya UG Fellowship 1</a></li>
-                                        <li><a href="/fellowships">Chanakkya UG Fellowship 2</a></li>
-                                        <li><a href="/fellowships">Chanakkya UG Fellowship 3</a></li>
+                                        @foreach($fellowships as $fellowship)
+                                        <li><a href="{{route('fellowships')}}">{{$fellowship->name}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
 
@@ -232,7 +181,7 @@
                                     <ul class="expandednavlinks">
                                         <li class="dropdown-header">Verticals</li>
                                         @foreach($verticals as $vertical)
-                                        <li><a href="/verticals">{{$vertical->name}}</a></li>
+                                        <li><a href="{{route('verticals')}}">{{$vertical->name}}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -240,7 +189,7 @@
                                     <a href="{{$navNews->link}}" style="text-decoration: none;">
                                         <div class="row">
                                             <div class="col-lg-5">
-                                                <img src="./assets/img/techxr.png" width="100%" height="auto" alt="">
+                                                <img src="{{'assets/img/techxr.png'}}" width="100%" height="auto" alt="">
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="sidecontentnav">
@@ -255,7 +204,10 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="/contact" class="nav-link make">Contact Us</a>
+                        <a href="{{route('consultants')}}" class="nav-link make">Consutancy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('contact')}}" class="nav-link make">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -269,34 +221,25 @@
                 <a href="#" class="sidebar-link">Explore<i class="fas fa-caret-down iconlast"></i>
                 </a>
                 <ul class="submenu">
-                    <li><a href="/isp" class="submenu-link">Innovation Support Programs</a></li>
-                    <li><a href="/csr" class="submenu-link">Donate Under CSR</a></li>
-                    <li><a href="/hackathon" class="submenu-link">Hackathon</a></li>
-                    <li><a href="/gallery" class="submenu-link">Gallery</a></li>
-                    <li><a href="/collaborations" class="submenu-link">Collaborations</a></li>
-                    <li><a href="/collaborations" class="submenu-link">Activities</a></li>
-                    <li><a href="/administration" class="submenu-link">Advisors</a></li>
-                    <li><a href="/administration" class="submenu-link">Management</a></li>
-                    <li><a href="/ihub-blogs" class="submenu-link">Blogs</a></li>
+                    <li><a href="{{route('isp')}}" class="submenu-link">Innovation Support Programs</a></li>
+                    <li><a href="{{route('csr')}}" class="submenu-link">Donate Under CSR</a></li>
+                    <li><a href="{{route('hackathon')}}" class="submenu-link">Hackathon</a></li>
+                    <li><a href="{{route('gallery')}}" class="submenu-link">Gallery</a></li>
+                    <li><a href="{{route('collaborations')}}" class="submenu-link">Collaborations</a></li>
+                    <li><a href="{{route('collaborations')}}" class="submenu-link">Activities</a></li>
+                    <li><a href="{{route('administration')}}" class="submenu-link">Advisors</a></li>
+                    <li><a href="{{route('administration')}}" class="submenu-link">Management</a></li>
+                    <li><a href="{{route('ihub-blogs')}}" class="submenu-link">Blogs</a></li>
                 </ul>
             </li>
             <li class="sidebar-item has-submenu">
                 <a href="#" class="sidebar-link">Training <i class="fas fa-caret-down iconlast"></i>
                 </a>
                 <ul class="submenu">
-                    <li><a href="/training" class="submenu-link">Training Module</a></li>
-                    <li><a href="/training-about" class="submenu-link">About iHub</a></li>
-                    <li><a href="training-courses" class="submenu-link">Latest Courses</a></li>
-                    <li><a href="training-contact" class="submenu-link">Contact Our Team</a></li>
-
-                </ul>
-            </li>
-            <li class="sidebar-item has-submenu">
-                <a href="#" class="sidebar-link">Consultancy <i class="fas fa-caret-down iconlast"></i>
-                </a>
-                <ul class="submenu">
-                    <li><a href="#" class="submenu-link">Sub menu 1</a></li>
-                    <li><a href="#" class="submenu-link">Sub menu 2</a></li>
+                    <li><a href="{{route('training')}}" class="submenu-link">Training Module</a></li>
+                    <li><a href="{{route('training-about')}}" class="submenu-link">About iHub</a></li>
+                    <li><a href="{{route('training-courses')}}" class="submenu-link">Latest Courses</a></li>
+                    <li><a href="{{route('training-contact')}}" class="submenu-link">Contact Our Team</a></li>
 
                 </ul>
             </li>
@@ -304,14 +247,17 @@
                 <a href="#" class="sidebar-link">Startups & Technology<i class="fas fa-caret-down iconlast"></i>
                 </a>
                 <ul class="submenu">
-                    <li><a href="/verticals" class="submenu-link">Verticals</a></li>
-                    <li><a href="/startups" class="submenu-link">Startups Programs</a></li>
-                    <li><a href="/#" class="submenu-link">Fellowship Programs</a></li>
+                    <li><a href="{{route('verticals')}}" class="submenu-link">Verticals</a></li>
+                    <li><a href="{{route('startups')}}" class="submenu-link">Startups Programs</a></li>
+                    <li><a href="{{route('fellowships')}}" class="submenu-link">Fellowship Programs</a></li>
 
                 </ul>
             </li>
+            <li class="sidebar-item has-submenu">
+                <a href="{{route('consultants')}}" class="sidebar-link">Consultancy</a>
+            </li>
             <li class="sidebar-item">
-                <a href="/contact" class="sidebar-link">Contact Us
+                <a href="{{route('contact')}}" class="sidebar-link">Contact Us
                 </a>
 
             </li>
@@ -385,7 +331,7 @@
             });
     </script>
 
-    <div class="bgheroo mt-5 h-100">
+<div class="bgheroo mt-5 h-100">
         <div class="container h-100">
 
             <div class="row h-100 justify-content-between">
@@ -393,7 +339,7 @@
                 <div class="col-lg-6">
                     <div class="clip py-5">
                         <div class="herogif">
-                            <img src="./assets/img/animatedLogo.gif" style="width: 100%;" alt="" />
+                            <img src="{{asset('assets/img/animatedLogo.gif')}}" style="width: 100%;" alt="" />
                         </div>
                     </div>
 
@@ -401,16 +347,18 @@
                 <div class="col-lg-4 col-10 mx-auto text-end">
                     <div class="row">
                         <div class="col-6">
-                            <img src="./assets/img/nmicps.png" width="100%" height="auto" alt="">
+                            <img src="{{asset('assets/img/nmicps.png')}}" width="100%" height="auto" alt="">
                         </div>
                         <div class="col-6">
-                            <img src="./assets/img/dst.png" width="100%" height="auto" alt="">
+                            <img src="{{asset('assets/img/dst.png')}}" width="100%" height="auto" alt="">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- hero -->
     <!-- Hero Section ends here -->
     <!-- Ticker Start -->
     <div class="marquee">
@@ -614,9 +562,9 @@
                             <ul class="foot-cont list-unstyled collapse d-md-block" id="links1">
                                 <li><a href="#">Your Certifications</a></li>
                                 <li><a href="#">Call for Proposals</a></li>
-                                <li><a href="/csr">Donate Under CSR</a></li>
-                                <li><a href="/contact">Careers</a></li>
-                                <li><a href="/administration">Administration</a></li>
+                                <li><a href="{{route('csr')}}">Donate Under CSR</a></li>
+                                <li><a href="{{route('contact')}}">Careers</a></li>
+                                <li><a href="{{route('administration')}}">Administration</a></li>
                                 <li><a href="#">Alumini</a></li>
                             </ul>
                         </div>
@@ -642,10 +590,10 @@
                                 </span>
                                 <span><i class="fas fa-caret-down iconlast"></i></span></a>
                             <ul class="foot-cont list-unstyled collapse d-md-block" id="links3">
-                                <li><a href="/verticals">Healthcare 4.0</a></li>
-                                <li><a href="/verticals">Smart Cities</a></li>
-                                <li><a href="/verticals">Industry 4.0</a></li>
-                                <li><a href="/verticals">Defence</a></li>
+                                <li><a href="{{route('verticals')}}">Healthcare 4.0</a></li>
+                                <li><a href="{{route('verticals')}}">Smart Cities</a></li>
+                                <li><a href="{{route('verticals')}}">Industry 4.0</a></li>
+                                <li><a href="{{route('verticals')}}">Defence</a></li>
                             </ul>
                         </div>
                     </div>
@@ -655,10 +603,10 @@
                             <a class="btn  d-block d-md-none" data-bs-toggle="collapse" data-bs-target="#links4"><span>Flagship Programs </span>
                                 <span><i class="fas fa-caret-down iconlast"></i></span></a>
                             <ul class="foot-cont list-unstyled collapse d-md-block" id="links4">
-                                <li><a href="#">CHANAKYA Fellowship (UG/PG/Doctoral)</a></li>
-                                <li><a href="#">Sponsored & Consultancy Programs</a></li>
-                                <li><a href="/startups">Startup Programs</a></li>
-                                <li><a href="/isp">Innovation Support Programs</a></li>
+                                <li><a href="{{route('fellowships')}}">CHANAKYA Fellowship (UG/PG/Doctoral)</a></li>
+                                <li><a href="{{route('consultants')}}">Sponsored & Consultancy Programs</a></li>
+                                <li><a href="{{route('startups')}}">Startup Programs</a></li>
+                                <li><a href="{{route('isp')}}">Innovation Support Programs</a></li>
                             </ul>
                         </div>
                     </div>
@@ -677,10 +625,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 linain py-3">
-                    <div class="navbar-brand " href="/">
+                    <div class="navbar-brand " href="{{route('welcome')}}">
 
                         <h1>
-                            <a href="/" class="logo mt-3"> i<font color="#ff914d">HUB</font> Divya<font color="#ff914d">
+                            <a href="{{route('welcome')}}" class="logo mt-3"> i<font color="#ff914d">HUB</font> Divya<font color="#ff914d">
                                     Sampark
                                 </font></a>
                         </h1>
@@ -730,6 +678,8 @@
         </div>
 
     </div>
+
+    <!-- Footer -->
     <!-- Footer End -->
 </body>
 <script>

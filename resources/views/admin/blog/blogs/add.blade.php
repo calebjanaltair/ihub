@@ -54,7 +54,7 @@
                             <label for="editImage" style="cursor: pointer;" class="form-label">
                                 <h4>Featured Image Preview</h4>
                                 <div id="cropContainer my-auto">
-                                    <img id="imageView" src="/public/uploads/profile/cover-avatar.png" style=" width:450px; height: auto;" alt="Image View">
+                                    <img id="imageView" src="{{asset('/public/uploads/profile/cover-avatar.png')}}" style=" width:450px; height: auto;" alt="Image View">
                                 </div>
                         </div>
                         </label>

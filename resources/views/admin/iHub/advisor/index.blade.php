@@ -268,7 +268,7 @@
             $('#edit_title').val(title);
             $('#edit_link').val(link);
             $('#status').val(status);
-            $('#showEditImage').attr('src', './public/uploads/advisor/' + image);
+            $('#showEditImage').attr('src', '{{asset("/public/uploads/advisor/")}}' + '/' + image);
             $('#showEditImage').removeClass('d-none');
 
         });

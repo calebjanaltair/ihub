@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <!-- set favicon -->
-    <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{route('AN')}}assets/img/favicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -22,17 +22,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
 
-    <link href="../../adminpanel/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="{{asset('adminpanel/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
 
     <!-- Toastr style -->
-    <link href="../../adminpanel/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="{{asset('adminpanel/css/plugins/toastr/toastr.min.css')}}" rel="stylesheet">
     <!-- Sweet ALert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Gritter -->
-    <link href="../../adminpanel/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="{{asset('adminpanel/js/plugins/gritter/jquery.gritter.css')}}" rel="stylesheet">
 
-    <link href="../../adminpanel/css/animate.css" rel="stylesheet">
-    <link href="../../adminpanel/css/style.css" rel="stylesheet">
+    <link href="{{asset('adminpanel/css/animate.css')}}" rel="stylesheet">
+    <link href="{{asset('adminpanel/css/style.css')}}" rel="stylesheet">
     <style>
         a {
             text-decoration: none;
@@ -64,7 +64,7 @@
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
                         <div class="dropdown profile-element">
-                            <img alt="image" class="rounded-circle" style="width: 48px; height: 48px;" src="{{'./../public/uploads/profile/' . (Auth::user()->profile_img ?? 'avatar.jpg')}}" />
+                            <img alt="image" class="rounded-circle" style="width: 48px; height: 48px;" src="{{asset('/public/uploads/profile/' . (Auth::user()->profile_img ?? 'avatar.jpg'))}}" />
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="block m-t-xs font-bold">{{Auth::user()->name}}</span>
                                 <span class="text-muted text-xs block">{{Auth::user()->role == 1 ? 'Administrator' : 'Moderator'}} <b class="caret"></b></span>
@@ -89,47 +89,47 @@
                         </div>
                     </li>
                     <li {{ request()->route()->getName() === 'home' ? "class=active" : '' }}>
-                        <a href="/home"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
+                        <a href="{{route('home')}}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
                     </li>
                     @if(Auth::user()->role == 1)
                     <li {{ request()->route()->getName() === 'users' ? "class=active" : '' }}>
-                        <a href="/users"><i class="fa fa-user-o"></i> <span class="nav-label">Users Management</span></a>
+                        <a href="{{route('users')}}"><i class="fa fa-user-o"></i> <span class="nav-label">Users Management</span></a>
                     </li>
                     @endif
                     <li {{ request()->is('user-details*') ? 'class=active' : 'style=display:none' }}>
                         <a href="#" onClick="window.location.reload();return false;"><i class="fa fa-user-circle"></i><span class="nav-label">User Profile</span></a>
                     </li>
                     <li {{ request()->is('files*') ? 'class=active' : '' }}>
-                        <a href="{{ route('files.index') }}" ><i class="fa fa-user-circle"></i><span class="nav-label">Files Management</span></a>
+                        <a href="{{ route('files.index') }}"><i class="fa fa-user-circle"></i><span class="nav-label">Files Management</span></a>
                     </li>
                     <li class="">
                         <a href="#"><i class="fa fa-star"></i> <span class="nav-label">iHub Main Module</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li class=""><a href="#"><span class="nav-label">Home Page</span> <span class="fa arrow"></a>
                                 <ul class="nav nav-third-level">
-                                    <li><a href="/navNews">Navbar News Card</a></li>
-                                    <li><a href="/ihub-news-all">News & Events</a></li>
-                                    <li><a href="/hgb">Team (HGB)</a></li>
-                                    <li><a href="/bod">Board of Directors</a></li>
+                                    <li><a href="{{route('navNews')}}">Navbar News Card</a></li>
+                                    <li><a href="{{route('ihub-news-all')}}">News & Events</a></li>
+                                    <li><a href="{{route('hgb')}}">Team (HGB)</a></li>
+                                    <li><a href="{{route('bod')}}">Board of Directors</a></li>
                                 </ul>
                             </li>
                             <li class=""><a href="#"><span class="nav-label">Administration</span> <span class="fa arrow"></a>
                                 <ul class="nav nav-third-level">
-                                    <li><a href="/advisor">Advisors</a></li>
-                                    <li><a href="/management">Management</a></li>
+                                    <li><a href="{{route('advisor')}}">Advisors</a></li>
+                                    <li><a href="{{route('management')}}">Management</a></li>
                                 </ul>
                             </li>
                             <li class=""><a href="#"><span class="nav-label">Contact Page</span> <span class="fa arrow"></a>
                                 <ul class="nav nav-third-level">
-                                    <li><a href="/recruitment">Recruitments</a></li>
-                                    <li><a href="/what_new">What's New</a></li>
+                                    <li><a href="{{route('recruitment')}}">Recruitments</a></li>
+                                    <li><a href="{{route('what_new')}}">What's New</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/hackathonView">Hackathon</a></li>
-                            <li><a href="/colab">Collaborations</a></li>
-                            <li><a href="/isprogram">Innovation</a></li>
-                            <li><a href="/vert">Verticals</a></li>
-                            <li><a href="/galleria">Gallery</a></li>
+                            <li><a href="{{route('hackathonView')}}">Hackathon</a></li>
+                            <li><a href="{{route('colab')}}">Collaborations</a></li>
+                            <li><a href="{{route('isprogram')}}">Innovation</a></li>
+                            <li><a href="{{route('vert')}}">Verticals</a></li>
+                            <li><a href="{{route('galleria')}}">Gallery</a></li>
                         </ul>
                     </li>
                     <li class="">
@@ -137,20 +137,20 @@
                         <ul class="nav nav-second-level">
                             <li class=""><a href="#"><span class="nav-label">Home Page</span> <span class="fa arrow"></a>
                                 <ul class="nav nav-third-level">
-                                    <li><a href="/HT">Testimonials</a></li>
-                                    <li><a href="/featured">Featured Courses</a></li>
+                                    <li><a href="{{route('HT')}}">Testimonials</a></li>
+                                    <li><a href="{{route('featured')}}">Featured Courses</a></li>
                                 </ul>
                             </li>
                             <li class=""><a href="#"><span class="nav-label">About</span> <span class="fa arrow"></a>
                                 <ul class="nav nav-third-level">
-                                    <li><a href="/AN">News & Updates</a></li>
+                                    <li><a href="{{route('AN')}}">News & Updates</a></li>
                                 </ul>
                             </li>
                             <li class=""><a href="index-2.html"><span class="nav-label">Courses</span> <span class="fa arrow"></a>
                                 <ul class="nav nav-third-level">
-                                    <!-- <li><a href="/companies">Offering Companies</a></li>
-                                    <li><a href="/categories">Categories</a></li> -->
-                                    <li><a href="/course-management">Course Management</a></li>
+                                    <!-- <li><a href="{{route('AN')}}companies">Offering Companies</a></li>
+                                    <li><a href="{{route('AN')}}categories">Categories</a></li> -->
+                                    <li><a href="{{route('course-management')}}">Course Management</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -158,42 +158,31 @@
                     <li class="">
                         <a href="index-2.html"><i class="fa fa-th-large"></i> <span class="nav-label">Startups Module</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="/startup-programs">Programs</a></li>
+                            <li><a href="{{route('startup-programs')}}">Programs</a></li>
                         </ul>
                     </li>
                     <li class="">
                         <a href="index-2.html"><i class="fa fa-file-text-o"></i> <span class="nav-label">Blog</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="/blogs">Blog</a></li>
-                            <li><a href="/categories-management">Categories</a></li>
+                            <li><a href="{{route('blogs')}}">Blog</a></li>
+                            <li><a href="{{route('categories-management')}}">Categories</a></li>
                         </ul>
                     </li>
                     <li class="">
                         <a href="index-2.html"><i class="fa fa-users"></i> <span class="nav-label">Fellowships Module</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="/fellowship_programs">Programs</a></li>
-                            <li><a href="/fellowship_leads">Leads</a></li>
+                            <li><a href="{{route('fellowship-programs')}}">Programs</a></li>
                         </ul>
                     </li>
                     <li class="">
                         <a href="index-2.html"><i class="fa fa-stack-exchange"></i> <span class="nav-label">Consultancy Module</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li class=""><a href="index-2.html"><span class="nav-label">Home Page</span> <span class="fa arrow"></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a href="/featured_project">Featured Projects</a></li>
-                                    <li><a href="/consultancy_news">News & Updates</a></li>
-                                    <li><a href="/consultancy_leads">Leads</a></li>
-                                </ul>
-                            </li>
-                            <li class=""><a href="index-2.html"><span class="nav-label">Consultancy</span> <span class="fa arrow"></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a href="/consultancy_project_management">Projects Management</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="{{route('consultancy-service')}}">Consultancy</a></li>
+                            <li><a href="{{route('consultancy-whyus')}}">Why Us?</a></li>
                         </ul>
                     </li>
                     <!-- <li {{ request()->route()->getName() === 'admin.approvals' ? "class=active" : '' }}>
-                        <a href="/admin/approvals"><i class="fa fa-id-card-o"></i> <span class="nav-label">Profile Approvals</span></a>
+                        <a href="{{route('AN')}}admin/approvals"><i class="fa fa-id-card-o"></i> <span class="nav-label">Profile Approvals</span></a>
                     </li>
                     <li {{ request()->is('admin/approval_details*') ? 'class=active' : 'style=display:none' }}>
                         <a href="#" onClick="window.location.reload();return false;"><i class="fa fa-table"></i><span class="nav-label">Approval Log</span></a>
@@ -211,17 +200,11 @@
                     </div>
                     <ul class="nav navbar-top-links navbar-right">
                         <li>
-                            <span class="m-r-sm text-muted welcome-message">Welcome to iHub DivyaSampark.</span>
+                            <div class="mx-2" style="cursor: pointer;" onclick="document.getElementById('logout-form').submit();">
+                                Logout from<strong> Admin?</strong>
+                            </div>
                         </li>
 
-
-
-                        <!-- <li>
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                <i class="fa fa-sign-out"></i> Log out
-                            </a>
-                        </li> -->
                     </ul>
 
                 </nav>
@@ -231,9 +214,6 @@
                 @yield('content')
             </div>
             <div class="footer">
-                <div class="float-right" style="cursor: pointer;" onclick="document.getElementById('logout-form').submit();">
-                    Logout from<strong> Admin?</strong>
-                </div>
                 <div>
                     <strong>Copyright</strong> iHub DivyaSampark &copy; 2023
                 </div>
@@ -251,47 +231,47 @@
     <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
 
 
-    <script src="../../adminpanel/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="../../adminpanel/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="{{asset('adminpanel/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
+    <script src="{{asset('adminpanel/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
 
     <!-- Mainly scripts -->
-    <script src="../../adminpanel/js/popper.min.js"></script>
-    <script src="../../adminpanel/js/bootstrap.js"></script>
-    <script src="../../adminpanel/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="../../adminpanel/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="{{asset('adminpanel/js/popper.min.js')}}"></script>
+    <script src="{{asset('adminpanel/js/bootstrap.js')}}"></script>
+    <script src="{{asset('adminpanel/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
+    <script src="{{asset('adminpanel/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
 
     <!-- Flot -->
-    <script src="../../adminpanel/js/plugins/flot/jquery.flot.js"></script>
-    <script src="../../adminpanel/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="../../adminpanel/js/plugins/flot/jquery.flot.spline.js"></script>
-    <script src="../../adminpanel/js/plugins/flot/jquery.flot.resize.js"></script>
-    <script src="../../adminpanel/js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="{{asset('adminpanel/js/plugins/flot/jquery.flot.js')}}"></script>
+    <script src="{{asset('adminpanel/js/plugins/flot/jquery.flot.tooltip.min.js')}}"></script>
+    <script src="{{asset('adminpanel/js/plugins/flot/jquery.flot.spline.js')}}"></script>
+    <script src="{{asset('adminpanel/js/plugins/flot/jquery.flot.resize.js')}}"></script>
+    <script src="{{asset('adminpanel/js/plugins/flot/jquery.flot.pie.js')}}"></script>
 
     <!-- Peity -->
-    <script src="../../adminpanel/js/plugins/peity/jquery.peity.min.js"></script>
-    <script src="../../adminpanel/js/demo/peity-demo.js"></script>
+    <script src="{{asset('adminpanel/js/plugins/peity/jquery.peity.min.js')}}"></script>
+    <script src="{{asset('adminpanel/js/demo/peity-demo.js')}}"></script>
 
     <!-- Custom and plugin javascript -->
-    <script src="../../adminpanel/js/inspinia.js"></script>
-    <script src="../../adminpanel/js/plugins/pace/pace.min.js"></script>
+    <script src="{{asset('adminpanel/js/inspinia.js')}}"></script>
+    <script src="{{asset('adminpanel/js/plugins/pace/pace.min.js')}}"></script>
 
     <!-- jQuery UI -->
-    <script src="../../adminpanel/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="{{asset('adminpanel/js/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 
     <!-- GITTER -->
-    <script src="../../adminpanel/js/plugins/gritter/jquery.gritter.min.js"></script>
+    <script src="{{asset('adminpanel/js/plugins/gritter/jquery.gritter.min.js')}}"></script>
 
     <!-- Sparkline -->
-    <script src="../../adminpanel/js/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="{{asset('adminpanel/js/plugins/sparkline/jquery.sparkline.min.js')}}"></script>
 
     <!-- Sparkline demo data  -->
-    <script src="../../adminpanel/js/demo/sparkline-demo.js"></script>
+    <script src="{{asset('adminpanel/js/demo/sparkline-demo.js')}}"></script>
 
     <!-- ChartJS-->
-    <script src="../../adminpanel/js/plugins/chartJs/Chart.min.js"></script>
+    <script src="{{asset('adminpanel/js/plugins/chartJs/Chart.min.js')}}"></script>
 
     <!-- Toastr -->
-    <script src="../../adminpanel/js/plugins/toastr/toastr.min.js"></script>
+    <script src="{{asset('adminpanel/js/plugins/toastr/toastr.min.js')}}"></script>
 
     <script>
         // document ready jquery

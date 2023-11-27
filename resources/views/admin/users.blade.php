@@ -35,7 +35,7 @@
                             @foreach($users as $user)
                             <tr class="gradeX" style="cursor: pointer;">
                                 <td>{{$loop->iteration}}</td>
-                                <td><img style="width: 30px; height: 30px;" src="{{'./public/uploads/profile/' . ($user->profile_img ?? 'avatar.jpg')}}" alt=""> {{' ' .$user->name}}</td>
+                                <td><img style="width: 30px; height: 30px;" src="{{asset('/public/uploads/profile/' . ($user->profile_img ?? 'avatar.jpg'))}}" alt=""> {{' ' .$user->name}}</td>
                                 <td>{{$user->department ?? 'N/A'}}</td>
                                 <td>{{$user->role == 0 ? 'Moderator' : 'Administrator'}}</td>
                                 <td> @if($user->status === 0) <span class="badge bg-dark text-white">Inactive</span> @elseif($user->status === 1) <span class="badge bg-success">Active</span>@elseif($user->status === 2) <span class="badge bg-danger">Blocked</span> @endif</td>
@@ -75,8 +75,8 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="./../adminpanel/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="./../adminpanel/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="{{asset('adminpanel/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
+<script src="{{asset('adminpanel/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
 
 
 <!-- Page-Level Scripts -->
@@ -111,7 +111,7 @@
                     }
                 });
                 $.ajax({
-                    url: '/deleteUser',
+                    url: '{{route("deleteUser")}}',
                     type: 'POST',
                     data: {
                         _token: "{{ csrf_token() }}",
@@ -150,7 +150,7 @@
                     }
                 });
                 $.ajax({
-                    url: '/blockUser',
+                    url: '{{route("blockUser")}}',
                     type: 'POST',
                     data: {
                         _token: "{{ csrf_token() }}",
@@ -189,7 +189,7 @@
                     }
                 });
                 $.ajax({
-                    url: '/unblockUser',
+                    url: '{{route("unblockUser")}}',
                     type: 'POST',
                     data: {
                         _token: "{{ csrf_token() }}",

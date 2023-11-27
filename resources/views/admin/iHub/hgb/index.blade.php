@@ -208,8 +208,8 @@
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="./../adminpanel/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="./../adminpanel/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="{{asset('adminpanel/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
+<script src="{{asset('adminpanel/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     function showImage(input) {
@@ -269,7 +269,7 @@
             $('#edit_link').val(link);
             // select option in status based on value of status
             $('#status').val(status);
-            $('#showEditImage').attr('src', '/public/uploads//hgb/' + image);
+            $('#showEditImage').attr('src', '{{asset("/public/uploads/hgb/")}}' + '/' + image);
             $('#showEditImage').removeClass('d-none');
 
         });

@@ -3,31 +3,31 @@
 
 <link rel="stylesheet" href="assets/css/administration.css">
 <div class="bgheroo mt-5 h-100">
-  <div class="container h-100">
+        <div class="container h-100">
 
-    <div class="row h-100 justify-content-between">
+            <div class="row h-100 justify-content-between">
 
-      <div class="col-lg-6">
-        <div class="clip py-5">
-          <div class="herogif">
-            <img src="./assets/img/animatedLogo.gif" style="width: 100%;" alt="" />
-          </div>
+                <div class="col-lg-6">
+                    <div class="clip py-5">
+                        <div class="herogif">
+                            <img src="{{asset('assets/img/animatedLogo.gif')}}" style="width: 100%;" alt="" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-10 mx-auto text-end">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="{{asset('assets/img/nmicps.png')}}" width="100%" height="auto" alt="">
+                        </div>
+                        <div class="col-6">
+                            <img src="{{asset('assets/img/dst.png')}}" width="100%" height="auto" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-      </div>
-      <div class="col-lg-4 col-10 mx-auto text-end">
-        <div class="row">
-          <div class="col-6">
-            <img src="./assets/img/nmicps.png" width="100%" height="auto" alt="">
-          </div>
-          <div class="col-6">
-            <img src="./assets/img/dst.png" width="100%" height="auto" alt="">
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-</div>
 <div class="marquee">
   <div class="marquee__item">
     <a></a>

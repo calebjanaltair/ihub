@@ -242,7 +242,7 @@
             $('#edit_name').val(name);
             $('#edit_id').val(id);
             $('#status').val(status);
-            $('#showEditImage').attr('src', '/public/uploads/gallery/' + image);
+            $('#showEditImage').attr('src', './public/uploads/gallery/' + image);
             $('#showEditImage').removeClass('d-none');
 
         });

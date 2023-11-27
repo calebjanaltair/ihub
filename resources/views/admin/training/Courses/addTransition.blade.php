@@ -291,7 +291,7 @@
             $('#status').val(status);
             $("#edit_description").summernote('code', description);
             $('#edit_title').val(title);
-            $('#showEditImage').attr('src', '/public/uploads//Coursetransition/' + image);
+            $('#showEditImage').attr('src', '{{asset("/public/uploads/Coursetransition/")}}' + '/' + image);
             $('#showEditImage').removeClass('d-none');
         });
 

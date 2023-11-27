@@ -18,7 +18,7 @@
 
   <!-- ======= Breadcrumbs ======= -->
   <div class="breadcrumbs">
-    <div class="container">
+    <div class="container my-4">
       <h2>Courses</h2>
       <p>We at iHUB DivyaSampark are here to develop highly knowledgeable human resources with top-order skills and we
         strongly believe that young innovative minds have huge potential to transform the world. </p>
@@ -26,7 +26,7 @@
   </div><!-- End Breadcrumbs -->
 
   <!-- ======= Courses Section ======= -->
-  <section id="courses" class="courses">
+  <section id="courses" class="courses my-4">
     <div class="container" data-aos="fade-up">
 
       <div class="row section-title">
@@ -46,14 +46,14 @@
         @foreach($courses as $course)
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
           <div class="course-item">
-            <img src="./public/uploads/Courses/{{$course->image}}" class="img-fluid" alt="...">
+            <img src="{{asset('/public/uploads/Courses/' . $course->image)}}" class="img-fluid" alt="...">
             <div class="course-content">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <h4 class="{{$course->type == 1 ? 'different' : ''}}"> {{$course->type == 1 ? 'Certificate' : ' Internship'}}</h4>
                 <p class="price">Rs. {{$course->fee}}/-</p>
               </div>
 
-              <h3><a href="/training-courseDetails/{{$course->id}}">{{$course->title}}</a></h3>
+              <h3><a href="{{ route('training.courseDetails', ['id' => $course->id]) }}">{{$course->title}}</a></h3>
               <p>{{$course->subtitle}}</p>
               <div class="trainer d-flex justify-content-between align-items-center">
                 <div class="trainer-profile d-flex align-items-center">
@@ -83,10 +83,10 @@
 
 
 
-  <section class="outerrr my-5">
-    <div class="container">
-      <div class="row">
-        <div class="section-title p-0">
+  <section class="outerrr my-4">
+    <div class="container my-4">
+      <div class="row my-4">
+        <div class="section-title p-0 my-4">
           <h2>NEWS & UPDATES</h2>
           <p>Career Transitions</p>
         </div>
@@ -106,7 +106,7 @@
                     <div class="swiper-slide">
                       <div class="testimonial-wrap">
                         <div class="testimonial-item manage">
-                          <img src="./public/uploads/Coursetransition/{{$testimonial->image}}" style="background-color: darkgray; object-fit: fill;" class="testimonial-img" alt="">
+                          <img src="{{asset('/public/uploads/Coursetransition/' . $testimonial->image)}}"  style="background-color: darkgray; object-fit: fill;" class="testimonial-img" alt="">
                           <h3>{{$testimonial->name}}</h3>
                           <h4>{{$testimonial->title}}</h4>
                           <p>

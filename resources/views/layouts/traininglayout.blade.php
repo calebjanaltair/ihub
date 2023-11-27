@@ -9,25 +9,25 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="/training-assets/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="/training-assets/assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="/training-assets/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/training-assets/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="/training-assets/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="/training-assets/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="/training-assets/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="{{asset('/training-assets/assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
+    <link href="{{asset('/training-assets/assets/vendor/aos/aos.css')}}" rel="stylesheet">
+    <link href="{{asset('/training-assets/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('/training-assets/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+    <link href="{{asset('/training-assets/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+    <link href="{{asset('/training-assets/assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+    <link href="{{asset('/training-assets/assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
 
 
 
     <!-- Template Main CSS File -->
-    <link href="/training-assets/assets/css/style.css" rel="stylesheet">
+    <link href="{{asset('/training-assets/assets/css/style.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
 </head>
@@ -43,31 +43,21 @@
                     <a href="">
                         <img src="https://i.ibb.co/0ftQ3GB/logo2.png" style="height: 50px; width: 55px;">
                     </a>
-                    <a href="/" class="logo"> i<font color="#ef6603">HUB</font> Divya<font color="#ef6603">Sampark</font></a>
+                    <a href="{{route('training')}}" class="logo"> i<font color="#ef6603">HUB</font> Divya<font color="#ef6603">Sampark</font></a>
                 </h3>
             </div>
 
-            <!-- <h1 class="logo me-auto">
-    <div class="logo-holder logo-6 me-auto">
-      <a href="">
-        <h3><span>IHUB DivyaSampark</span><br>IIT Roorkee</h3>
-      </a>
-    </div>
-  </h1> -->
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto"><img src="/training-assets/assets/img/logo.png" alt="" class="img-fluid"></a> -->
-
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a href="/training" {{ request()->route()->getName() === 'training' ? 'class=active' : ''}}>Home</a></li>
-                    <li><a href="/training-about" {{ request()->route()->getName() === 'training-about' ? 'class=active' : ''}}>About</a></li>
-                    <li><a href="/training-courses" {{request()->route()->getName() === 'training-courses' ? 'class=active' : ''}}>Courses</a></li>
-                    <li><a href="/training-contact" {{ request()->route()->getName() === 'training-contact' ? 'class=active' : ''}}>Contact</a></li>
+                    <li><a href="{{route('training')}}" {{ request()->route()->getName() === 'training' ? 'class=active' : ''}}>Home</a></li>
+                    <li><a href="{{route('training-about')}}" {{ request()->route()->getName() === 'training-about' ? 'class=active' : ''}}>About</a></li>
+                    <li><a href="{{route('training-courses')}}" {{request()->route()->getName() === 'training-courses' ? 'class=active' : ''}}>Courses</a></li>
+                    <li><a href="{{route('training-contact')}}" {{ request()->route()->getName() === 'training-contact' ? 'class=active' : ''}}>Contact</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
             <div class="get">
-                <a href="/training-courses" class="get-started-btn">Get Started</a>
+                <a href="{{route('training-courses')}}" class="get-started-btn">Get Started</a>
             </div>
         </div>
     </header><!-- End Header -->
@@ -86,7 +76,7 @@
                         <div class="outer me-auto">
                             <h3>
 
-                                <a href="index.html" class="logo"> i<font color="#ef6603">HUB</font> Divya<font color="#ef6603">Sampark</font></a>
+                                <a href="{{route('training')}}" class="logo"> i<font color="#ef6603">HUB</font> Divya<font color="#ef6603">Sampark</font></a>
                             </h3>
                         </div>
                         <p>
@@ -99,11 +89,10 @@
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{route('training')}}">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{route('training-about')}}">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{route('training-courses')}}">Courses</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{route('csr')}}">iHub DivyaSampark</a></li>
                         </ul>
                     </div>
 
@@ -158,14 +147,14 @@
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="/training-assets/assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="/training-assets/assets/vendor/aos/aos.js"></script>
-    <script src="/training-assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/training-assets/assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="/training-assets/assets/vendor/php-email-form/validate.js"></script>
+    <script src="{{asset('/training-assets/assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
+    <script src="{{asset('/training-assets/assets/vendor/aos/aos.js')}}"></script>
+    <script src="{{asset('/training-assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('/training-assets/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+    <script src="{{asset('/training-assets/assets/vendor/php-email-form/validate.js')}}"></script>
 
     <!-- Template Main JS File -->
-    <script src="/training-assets/assets/js/main.js"></script>
+    <script src="{{asset('/training-assets/assets/js/main.js')}}"></script>
     <script>
         window.addEventListener('scroll', function() {
             const nav = document.getElementById('header');

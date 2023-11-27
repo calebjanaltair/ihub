@@ -47,7 +47,7 @@ class iHubNewsController extends Controller
         $input['created_at'] = now();
         // dd($input);
         ihubNews::create($input);
-        return redirect()->route('iHub-News-&-Events')->with('success', 'News added successfully');
+        return redirect()->route('ihub-news-all')->with('success', 'News added successfully');
     }
     public function update(Request $request)
     {
@@ -66,7 +66,7 @@ class iHubNewsController extends Controller
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
-            $file->move('uploads/news/', $filename);
+            $file->move('/public/uploads/news/', $filename);
             $news->image = $filename;
         }
         if ($request->croppedImage != null) {
@@ -87,7 +87,7 @@ class iHubNewsController extends Controller
         $news->updated_at = now();
         $news->save();
 
-        return redirect()->route('iHub-News-&-Events')->with('success', 'News updated successfully');
+        return redirect()->route('ihub-news-all')->with('success', 'News updated successfully');
     }
     public function delete(Request $request)
     {

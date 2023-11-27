@@ -20,7 +20,7 @@
         <div class="ibox">
             <div class="ibox-title d-flex justify-content-between align-items-center">
                 <h5>News & Events Card Management</h5>
-                <a class="btn btn-primary" href="/ihub-news-addscreen"><i class="fa fa-plus"> </i>  Add New</a>
+                <a class="btn btn-primary" href="{{route('ihub-news-addscreen')}}"><i class="fa fa-plus"> </i>  Add New</a>
             </div>
             <div class="ibox-content">
                 <div class="table-responsive">
@@ -49,7 +49,7 @@
                                 </td>
 
                                 <td class="">
-                                    <a href="/ihub-news-edit/{{$newsevent->id}}" class="btn btn-dark btn-sm btn-block">
+                                    <a href="{{ route('ihub-news-edit', ['id' => $newsevent->id]) }}" class="btn btn-dark btn-sm btn-block">
                                         <i class="fa fa-edit"> </i> Edit
                                     </a>
 

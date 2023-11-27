@@ -248,7 +248,7 @@
             $('#edit_id').val(id);
             $('#status').val(status);
             $('#edit_link').val(link);
-            $('#showEditImage').attr('src', '/public/uploads//whatnew/' + image);
+            $('#showEditImage').attr('src', './public/uploads//whatnew/' + image);
             $('#showEditImage').removeClass('d-none');
 
         });

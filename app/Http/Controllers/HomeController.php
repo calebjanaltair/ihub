@@ -21,10 +21,14 @@ use App\Models\AboutNews;
 use App\Models\FeaturedCourses;
 use App\Models\Course;
 use App\Models\CareerTransition;
+use App\Models\CourseTetimonial;
 use App\Models\navNews;
 use App\Models\Hackathon;
 use App\Models\Blog;
 use App\Models\BlogCategory;
+use App\Models\Fellowship;
+use App\Models\ConsultancyService;
+use App\Models\Whyus;
 
 class HomeController extends Controller
 {
@@ -37,9 +41,24 @@ class HomeController extends Controller
         $navNews = navNews::first();
         // $startups = startup::where('status', 1)->get();
         $startups = startup::where('status', 1)->limit(4)->get();
+        $fellowships = Fellowship::where('status', 1)->limit(4)->get();
         // $verticals = Vertical::where('status', 1)->get(); only first four
         $verticals = Vertical::where('status', 1)->limit(4)->get();
-        return view('welcome', compact('tickers', 'newses', 'hgbs', 'bods', 'navNews', 'startups', 'verticals'));
+        return view('welcome', compact('tickers', 'newses', 'hgbs', 'bods', 'navNews', 'startups', 'verticals', 'fellowships'));
+    }
+    public function welcomehome()
+    {
+        $tickers = Ticker::where('status', 1)->get();
+        $newses = ihubNews::where('status', 1)->get();
+        $hgbs = HGB::where('status', 1)->get();
+        $bods = BOD::where('status', 1)->get();
+        $navNews = navNews::first();
+        // $startups = startup::where('status', 1)->get();
+        $startups = startup::where('status', 1)->limit(4)->get();
+        $fellowships = Fellowship::where('status', 1)->limit(4)->get();
+        // $verticals = Vertical::where('status', 1)->get(); only first four
+        $verticals = Vertical::where('status', 1)->limit(4)->get();
+        return view('welcome', compact('tickers', 'newses', 'hgbs', 'bods', 'navNews', 'startups', 'verticals', 'fellowships'));
     }
     public function administration()
     {
@@ -61,8 +80,9 @@ class HomeController extends Controller
         // dd($ams);
         $navNews = navNews::first();
         $startups = startup::where('status', 1)->limit(4)->get();
+        $fellowships = Fellowship::where('status', 1)->limit(4)->get();
         $verticals = Vertical::where('status', 1)->get();
-        return view('user.administration', compact('navNews', 'advisors', 'ceo', 'spm', 'pm', 'dm', 'ams', 'asocms', 'assocs', 'startups', 'verticals'));
+        return view('user.administration', compact('navNews', 'fellowships', 'advisors', 'ceo', 'spm', 'pm', 'dm', 'ams', 'asocms', 'assocs', 'startups', 'verticals', 'fellowships'));
     }
     public function collaborations()
     {
@@ -72,9 +92,10 @@ class HomeController extends Controller
         // Colab where type 1 i.e. activities and status 1 i.e. active
         $activities = Colab::where('type', 1)->where('status', 1)->get();
         $startups = startup::where('status', 1)->limit(4)->get();
+        $fellowships = Fellowship::where('status', 1)->limit(4)->get();
         $verticals = Vertical::where('status', 1)->get();
 
-        return view('user.collaborations', compact('slides', 'activities', 'navNews', 'startups', 'verticals'));
+        return view('user.collaborations', compact('slides', 'fellowships', 'activities', 'navNews', 'startups', 'verticals'));
     }
 
     public function hackathon()
@@ -82,9 +103,10 @@ class HomeController extends Controller
         $hackathon = Hackathon::first();
         $navNews = navNews::first();
         $startups = startup::where('status', 1)->limit(4)->get();
+        $fellowships = Fellowship::where('status', 1)->limit(4)->get();
         $verticals = Vertical::where('status', 1)->get();
 
-        return view('user.hackathon', compact('hackathon', 'navNews', 'startups', 'verticals'));
+        return view('user.hackathon', compact('hackathon', 'fellowships', 'navNews', 'startups', 'verticals', 'fellowships'));
     }
     public function contact()
     {
@@ -93,16 +115,18 @@ class HomeController extends Controller
         // Recruitment where status 1
         $recruitments = Recruitment::where('status', 1)->get();
         $startups = startup::where('status', 1)->limit(4)->get();
+        $fellowships = Fellowship::where('status', 1)->limit(4)->get();
         $verticals = Vertical::where('status', 1)->get();
         $navNews = navNews::first();
-        return view('user.contact', compact('whatnews', 'recruitments', 'navNews', 'startups', 'verticals'));
+        return view('user.contact', compact('whatnews', 'recruitments', 'navNews', 'fellowships', 'startups', 'verticals'));
     }
     public function csr()
     {
         $navNews = navNews::first();
         $startups = startup::where('status', 1)->limit(4)->get();
+        $fellowships = Fellowship::where('status', 1)->limit(4)->get();
         $verticals = Vertical::where('status', 1)->get();
-        return view('user.csr', compact('navNews', 'startups', 'verticals'));
+        return view('user.csr', compact('navNews', 'startups', 'fellowships', 'verticals'));
     }
     public function gallery()
     {
@@ -110,8 +134,9 @@ class HomeController extends Controller
         $navNews = navNews::first();
         $slides = Gallery::where('status', 1)->get();
         $startups = startup::where('status', 1)->limit(4)->get();
+        $fellowships = Fellowship::where('status', 1)->limit(4)->get();
         $verticals = Vertical::where('status', 1)->get();
-        return view('user.gallery', compact('slides', 'navNews', 'startups', 'verticals'));
+        return view('user.gallery', compact('slides', 'navNews', 'fellowships', 'startups', 'verticals', 'fellowships'));
     }
     public function isp()
     {
@@ -119,16 +144,18 @@ class HomeController extends Controller
         // ISP where status 1
         $isps = ISP::where('status', 1)->get();
         $startups = startup::where('status', 1)->limit(4)->get();
+        $fellowships = Fellowship::where('status', 1)->limit(4)->get();
         $verticals = Vertical::where('status', 1)->get();
-        return view('user.isp', compact('isps', 'navNews', 'startups', 'verticals'));
+        return view('user.isp', compact('isps', 'navNews', 'fellowships', 'startups', 'verticals'));
     }
     public function verticals()
     {
         // Vertical where status 1
         $navNews = navNews::first();
         $startups = startup::where('status', 1)->limit(4)->get();
+        $fellowships = Fellowship::where('status', 1)->limit(4)->get();
         $verticals = Vertical::where('status', 1)->get();
-        return view('user.verticles', compact('verticals', 'navNews', 'startups'));
+        return view('user.verticles', compact('verticals', 'fellowships', 'navNews', 'startups', 'fellowships'));
     }
 
     public function startups()
@@ -136,9 +163,20 @@ class HomeController extends Controller
         // startup where status 1
         $navNews = navNews::first();
         $startups = startup::where('status', 1)->get();
-        $startups = startup::where('status', 1)->limit(4)->get();
+        $fellowships = Fellowship::where('status', 1)->limit(4)->get();
+        $startups_4s = startup::where('status', 1)->limit(4)->get();
         $verticals = Vertical::where('status', 1)->get();
-        return view('user.startups.index', compact('startups', 'navNews', 'startups', 'verticals'));
+        return view('user.startups.index', compact('startups', 'fellowships', 'navNews', 'startups_4s', 'verticals'));
+    }
+    public function fellowships()
+    {
+        // startup where status 1
+        $navNews = navNews::first();
+        $fellowships = Fellowship::where('status', 1)->get();
+        $startups = startup::where('status', 1)->limit(4)->get();
+        $fellowships = Fellowship::where('status', 1)->limit(4)->get();
+        $verticals = Vertical::where('status', 1)->get();
+        return view('user.fellowships.index', compact('fellowships', 'fellowships', 'navNews', 'startups', 'verticals'));
     }
 
     public function training()
@@ -167,25 +205,30 @@ class HomeController extends Controller
     public function courseDetails($id)
     {
         $course = Course::where('id', $id)->first();
-        // $featureds = Course::where('status', 1)->whereIn('id', FeaturedCourses::pluck('course_id'))->get(); except $id
         $featureds = Course::where('status', 1)->whereIn('id', FeaturedCourses::pluck('course_id'))->where('id', '!=', $id)->get();
-        return view('user.training.course-detail', compact('course', 'featureds'));
+        $testimonials = CourseTetimonial::where('status', 1)->where('course_id', $id)->get();
+        $transitions = CareerTransition::where('status', 1)->where('course_id', $id)->get();
+        return view('user.training.course-detail', compact('course', 'featureds', 'testimonials', 'transitions'));
     }
     public function contactCourse()
     {
         return view('user.training.contact');
     }
-    public function blogs(){
+    public function blogs()
+    {
         $navNews = navNews::first();
         $startups = startup::where('status', 1)->limit(4)->get();
+        $fellowships = Fellowship::where('status', 1)->limit(4)->get();
         $verticals = Vertical::where('status', 1)->get();
         $blogs = Blog::where('status', 1)->get();
         $blogs = blog_categories($blogs);
-        return view('user.blogs.index', compact('blogs' , 'navNews', 'startups', 'verticals'));
+        return view('user.blogs.index', compact('blogs', 'navNews', 'fellowships', 'startups', 'verticals'));
     }
-    public function showblog($id){
+    public function showblog($id)
+    {
         $navNews = navNews::first();
         $startups = startup::where('status', 1)->limit(4)->get();
+        $fellowships = Fellowship::where('status', 1)->limit(4)->get();
         $verticals = Vertical::where('status', 1)->get();
         $blog = Blog::where('id', $id)->first();
         $title = $blog->title;
@@ -193,6 +236,13 @@ class HomeController extends Controller
         $image = $blog->image;
 
         $blogCategories = categories_of_blog($id);
-        return view('user.blogs.show', compact('blog', 'title','description','image', 'blogCategories', 'navNews', 'startups', 'verticals'));
+        return view('user.blogs.show', compact('blog', 'title', 'fellowships', 'description', 'image', 'blogCategories', 'navNews', 'startups', 'verticals'));
+    }
+
+    public function consultants()
+    {
+        $consultantservices = ConsultancyService::where('status', 1)->get();
+        $whyuses = Whyus::where('status', 1)->get();
+        return view('user.consultancy.index', compact('consultantservices', 'whyuses'));
     }
 }

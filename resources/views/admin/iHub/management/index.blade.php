@@ -306,7 +306,7 @@
             $('#status').val(status); 
             // $('#edit_position').val(position);
             // $('#edit_position').children('option[value="' + position + '"]').removeAttr('disabled');
-            $('#showEditImage').attr('src', '/public/uploads//manager/' + image);
+            $('#showEditImage').attr('src', '{{asset("/public/uploads/manager/")}}' + '/' + image);
             $('#showEditImage').removeClass('d-none');
 
         });

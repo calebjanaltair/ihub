@@ -24,13 +24,13 @@ class FileController extends Controller
     {
         // dd($request->all());
         $file = $request->file('file');
-        $fileName = $request->name . '.' . $file->getClientOriginalExtension();
-        $destinationPath = public_path('/public/uploads/files');
+        $fileName = str_replace(' ', '', $request->name) . '.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('/uploads/files');
         $file->move($destinationPath, $fileName);
 
         File::create([
             'name' => $request->input('name'),
-            'file_path' => 'public/uploads/files/' . $fileName,
+            'file_path' => '/uploads/files/' . $fileName,
         ]);
 
         return redirect()->route('files.index');

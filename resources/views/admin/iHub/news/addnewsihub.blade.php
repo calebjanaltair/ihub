@@ -9,7 +9,7 @@
         <div class="ibox">
             <div class="ibox-title d-flex justify-content-between align-items-center">
                 <h5>Add News & Events Card</h5>
-                <a class="btn btn-primary" href="/ihub-news-all"><i class="fa fa-arrow-left"> </i> All Records</a>
+                <a class="btn btn-primary" href="{{route('ihub-news-all')}}"><i class="fa fa-arrow-left"> </i> All Records</a>
 
             </div>
             <div class="ibox-content">

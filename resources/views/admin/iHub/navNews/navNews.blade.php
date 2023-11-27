@@ -59,7 +59,7 @@
                         <div class="col my-auto">
 
                             <div id="cropContainer my-auto">
-                                <img id="cropImage" src="/public/uploads//navNews/{{$navNews->image}}" alt="Croppable Image">
+                                <img id="cropImage" src="{{asset('/public/uploads//navNews/' . $navNews->image)}}" alt="Croppable Image">
                             </div>
                         </div>
                     </div>

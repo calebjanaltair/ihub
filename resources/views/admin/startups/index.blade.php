@@ -290,7 +290,7 @@
             $('#status').val(status);
             $("#edit_description").summernote('code', description);
             $('#edit_link').val(link);
-            $('#showEditImage').attr('src', '/public/uploads/startup/poster/' + image);
+            $('#showEditImage').attr('src', './public/uploads/startup/poster/' + image);
             $('#showEditImage').removeClass('d-none');
         });
 
