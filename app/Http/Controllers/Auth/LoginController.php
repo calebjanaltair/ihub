@@ -40,6 +40,10 @@ class LoginController extends Controller
     }
     protected function authenticated(Request $request, $user)
     {
+        if ($user->status == 2) {
+            auth()->logout();
+            return back()->with('error', 'Your account has been blocked. Please contact administrator.');
+        }
         $user = auth()->user();
         $user->last_login = now();
         $user->save();

@@ -13,9 +13,11 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="ibox ">
-            <div class="ibox-title">
-                <h5>Users Management</h5>
-
+            <div class="ibox-title d-flex justify-content-between align-items-center">
+                <h5>User Management</h5>
+                <a href="{{route('add-new-user')}}" class="btn btn-primary">
+                    <i class="fa fa-plus"> </i> Add New User
+                </a>
             </div>
             <div class="ibox-content">
 

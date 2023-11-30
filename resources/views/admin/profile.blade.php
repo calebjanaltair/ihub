@@ -39,7 +39,7 @@
                         <br>
                         <strong>Member Since: </strong>
                         @php
-                        $datetime = \Carbon\Carbon::createFromDate(Auth::user()->last_login);
+                        $datetime = \Carbon\Carbon::createFromDate(Auth::user()->created_at);
                         echo $datetime->format('d M Y');
                         @endphp
                     </p>
@@ -55,7 +55,7 @@
                         <h5>User Details</h5>
                     </div>
                     <div class="ibox-content">
-                        <form id="editProfile" autocomplete="off" action="/editProfile" method="post" enctype="multipart/form-data">
+                        <form id="editProfile" autocomplete="off" action="{{route('editProfile')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <input type="file" name="profile_img" id="profile_img" class="visually-hidden" accept="image/*" hidden onchange="imageName(this)">
                             <div class="row mb-3">
@@ -65,15 +65,10 @@
                                 </div>
                                 <div class="col">
                                     <label for="formGroupExampleInput" class="form-label">Email</label>
-                                    <input type="email" class="form-control" placeholder="" required id="email" name="email" value="{{Auth::user()->email}}">
+                                    <input type="email" class="form-control" placeholder="" disabled required id="email" name="email" value="{{Auth::user()->email}}">
                                 </div>
                             </div>
-                            <div class="row mb-2">
-                                <div class="col">
-                                    <label for="formGroupExampleInput" class="form-label">Department</label>
-                                    <input type="text" name="department" id="department" class="form-control" value="{{Auth::user()->department}}">
-                                </div>
-                            </div>
+                            
                             <div class="row">
                                 <div class="hr-line-dashed"></div>
                             </div>
@@ -93,7 +88,7 @@
                             <h5>Change Password</h5>
                         </div>
                         <div class="ibox-content">
-                            <form id="editPassword" autocomplete="off" action="/changePswd" method="post">
+                            <form id="editPassword" autocomplete="off" action="{{route('editPassword')}}" method="post">
                                 @csrf
                                 <div class="row mb-2">
                                     <div class="col">

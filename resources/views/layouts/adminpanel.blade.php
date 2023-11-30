@@ -70,7 +70,7 @@
                                 <span class="text-muted text-xs block">{{Auth::user()->role == 1 ? 'Administrator' : 'Moderator'}} <b class="caret"></b></span>
                             </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                <li><a class="dropdown-item" href="profile">Profile</a></li>
+                                <li><a class="dropdown-item" href="{{route('profile')}}">Profile</a></li>
                                 <li class="dropdown-divider"></li>
                                 <li>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -102,6 +102,7 @@
                     <li {{ request()->is('files*') ? 'class=active' : '' }}>
                         <a href="{{ route('files.index') }}"><i class="fa fa-user-circle"></i><span class="nav-label">Files Management</span></a>
                     </li>
+                    @if(Auth::user()->userPermission->hasMainModule())
                     <li class="">
                         <a href="#"><i class="fa fa-star"></i> <span class="nav-label">iHub Main Module</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -132,6 +133,8 @@
                             <li><a href="{{route('galleria')}}">Gallery</a></li>
                         </ul>
                     </li>
+                    @endif
+                    @if(Auth::user()->userPermission->hasTrainingModule())
                     <li class="">
                         <a href="#"><i class="fa fa-laptop"></i> <span class="nav-label">Training & Courses</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -155,12 +158,16 @@
                             </li>
                         </ul>
                     </li>
+                    @endif
+                    @if(Auth::user()->userPermission->hasStartupsModule())
                     <li class="">
                         <a href="index-2.html"><i class="fa fa-th-large"></i> <span class="nav-label">Startups Module</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="{{route('startup-programs')}}">Programs</a></li>
                         </ul>
                     </li>
+                    @endif
+                    @if(Auth::user()->userPermission->hasBlogModule())
                     <li class="">
                         <a href="index-2.html"><i class="fa fa-file-text-o"></i> <span class="nav-label">Blog</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -168,12 +175,16 @@
                             <li><a href="{{route('categories-management')}}">Categories</a></li>
                         </ul>
                     </li>
+                    @endif
+                    @if(Auth::user()->userPermission->hasFellowshipModule())
                     <li class="">
                         <a href="index-2.html"><i class="fa fa-users"></i> <span class="nav-label">Fellowships Module</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="{{route('fellowship-programs')}}">Programs</a></li>
                         </ul>
                     </li>
+                    @endif
+                    @if(Auth::user()->userPermission->hasConsultancyModule())
                     <li class="">
                         <a href="index-2.html"><i class="fa fa-stack-exchange"></i> <span class="nav-label">Consultancy Module</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -181,6 +192,7 @@
                             <li><a href="{{route('consultancy-whyus')}}">Why Us?</a></li>
                         </ul>
                     </li>
+                    @endif
                     <!-- <li {{ request()->route()->getName() === 'admin.approvals' ? "class=active" : '' }}>
                         <a href="{{route('AN')}}admin/approvals"><i class="fa fa-id-card-o"></i> <span class="nav-label">Profile Approvals</span></a>
                     </li>

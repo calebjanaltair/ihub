@@ -97,8 +97,6 @@ class AdminController extends Controller
     public function editProfile(Request $request){
         $user = User::find(Auth::id());
         $user->name = $request->name;
-        $user->email = $request->email;
-        $user->department = $request->department;
         $user->save();
 
         if($request->hasFile('profile_img')){

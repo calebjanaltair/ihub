@@ -10,19 +10,45 @@
     <link href="{{asset('adminpanel/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
     <link href="{{asset('adminpanel/css/animate.css')}}" rel="stylesheet">
     <link href="{{asset('adminpanel/css/style.css')}}" rel="stylesheet">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            background: url('{{asset("assets/img/iit-compressed.jpg")}}') center center fixed;
+            background-size: cover;
+            /* Add a light gradient */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{asset('assets/img/iit-compressed.jpg')}}') center center fixed;
+            background-size: cover;
+        }
 
+        .middle-box {
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .ibox-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        }
+    </style>
 </head>
 
 <body class="gray-bg">
 
     <div class="middle-box text-center loginscreen animated fadeInDown">
         <div>
-            <div>
-
-                <h1 class="logo-name">iHub</h1>
-
-            </div>
             <div class="ibox-content">
+                <!-- Show error message -->
+                @if(Session::has('error'))
+                <div class="alert alert-danger">
+                    {{ Session::get('error') }}
+                </div>
+                @endif
                 <h3>Welcome to iHub DivyaSampark</h3>
                 <p>Admin Panel</p>
                 <p>Login in. To access dashboard</p>

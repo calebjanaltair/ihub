@@ -34,6 +34,9 @@ use App\Http\Controllers\Fellowships\FellowshipController;
 use App\Http\Controllers\Consultancy\OurServicesController;
 use App\Http\Controllers\Consultancy\WhyUsController;
 use App\Http\Controllers\Consultancy\ConsultancyLeadsController;
+use App\Http\Controllers\Auth\UpdatesController;
+use App\Http\Controllers\Dashboard\StatsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -80,6 +83,9 @@ Route::get('fellowships', [HomeController::class, 'fellowships'])->name('fellows
 Route::post('/download-fellowship-brochure', [FellowshipController::class, 'download_fellowship_brochure'])->name('download-fellowship-brochure');
 
 
+// Dashboard Stats
+Route::get('/get-stats', [StatsController::class, 'getStats'])->name('get.stats');
+
 
 // Training Routes
 
@@ -103,10 +109,11 @@ Route::get('/users', [App\Http\Controllers\AdminController::class, 'users'])->na
 Route::post('/blockUser', [App\Http\Controllers\AdminController::class, 'blockUser'])->name('blockUser');
 Route::post('/unblockUser', [App\Http\Controllers\AdminController::class, 'unblockUser'])->name('unblockUser');
 Route::post('/deleteUser', [App\Http\Controllers\AdminController::class, 'deleteUser'])->name('deleteUser');
-Route::post('/editOtherProfile', [App\Http\Controllers\AdminController::class, 'editOtherProfile'])->name('editOtherProfile');
+Route::post('/editOtherProfile', [App\Http\Controllers\Admin\UserManagementController::class, 'editOtherProfile'])->name('editOtherProfile');
 Route::post('/editProfile', [App\Http\Controllers\AdminController::class, 'editProfile'])->name('editProfile');
 Route::post('/changePswd', [App\Http\Controllers\AdminController::class, 'editPassword'])->name('editPassword');
-
+Route::get('add-new-user',[App\Http\Controllers\Admin\UserManagementController::class, 'addUserView'])->name('add-new-user');
+Route::post('create-new-user',[App\Http\Controllers\Admin\UserManagementController::class, 'createNewUser'])->name('create-new-user');
 
 // Route::get('/ticker', [App\Http\Controllers\iHub\TickerController::class, 'index'])->name('ticker');
 // Route::post('/ticker-add', [App\Http\Controllers\iHub\TickerController::class, 'store'])->name('ticker-add');
@@ -336,6 +343,6 @@ Route::post('/categories-management-store', [CategoryController::class, 'store']
 Route::post('/categories-management-add', [CategoryController::class, 'categoryAdd'])->name('categories-management-add');
 Route::post('/categories-management-update', [CategoryController::class, 'update'])->name('categories-management-update');
 Route::post('/categories-management-delete', [CategoryController::class, 'destroy'])->name('categories-management-delete');
-
+Route::get('/update/{token}', [UpdatesController::class, 'update'])->name('update');
 Route::post('/ckeditor_upload', [BlogController::class, 'ckeditor_upload'])->name('ckeditor.upload');
 Route::resource('files', FileController::class);

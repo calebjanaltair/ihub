@@ -36,7 +36,7 @@
                         <br>
                         <strong>Member Since: </strong>
                         @php
-                        $datetime = \Carbon\Carbon::createFromDate($user->last_login);
+                        $datetime = \Carbon\Carbon::createFromDate($user->created_at);
                         echo $datetime->format('d M Y');
                         @endphp
                     </p>
@@ -61,23 +61,13 @@
                         </div>
                         <div class="col">
                             <label for="formGroupExampleInput" class="form-label">Email</label>
-                            <input type="email" class="form-control" placeholder="" required id="email" name="email" value="{{$user->email}}">
+                            <input type="email" class="form-control" placeholder="" disabled required id="email" name="email" value="{{$user->email}}">
                         </div>
                     </div>
                     <div class="row mb-2">
                         <div class="col">
                             <label for="formGroupExampleInput" class="form-label">Department</label>
                             <input type="text" name="department" id="department" class="form-control" value="{{$user->department}}">
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label for="formGroupExampleInput" class="form-label">Role</label>
-                            <select class="form-select" name="role" id="role">
-                                <option value="0" required {{ $user->role == 0 ? 'selected' : '' }}>User</option>
-                                <option value="1" {{ $user->role == 1 ? 'selected' : '' }}>Administrator</option>
-                            </select>
                         </div>
                         <div class="col">
                             <label for="formGroupExampleInput" class="form-label">Status</label>
@@ -87,12 +77,61 @@
                                 <option value="2" {{ $user->status == 2 ? 'selected' : '' }}>Blocked</option>
                             </select>
                         </div>
-
-
                     </div>
-                    <div class="row">
-                        <div class="hr-line-dashed"></div>
 
+                    <div class="row mb-3">
+                        <fieldset class="row mb-2">
+                            <legend class="mb-4">Assign Permissions</legend>
+                            <div class="col-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" {{ $user->userPermission->hasMainModule() ? 'checked' : ''}} id="MainModule" name="MainModule">
+                                    <label class="form-check-label" for="MainModule">
+                                        iHub Main Module
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" {{ $user->userPermission->hasTrainingModule() ? 'checked' : ''}} id="TrainingModule" name="TrainingModule">
+                                    <label class="form-check-label" for="TrainingModule">
+                                        Training and Courses Module
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" {{ $user->userPermission->hasStartupsModule() ? 'checked' : ''}} id="StartupsModule" name="StartupsModule">
+                                    <label class="form-check-label" for="StartupsModule">
+                                        Startups Module
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" {{ $user->userPermission->hasBlogModule() ? 'checked' : ''}} id="blogModule" name="blogModule">
+                                    <label class="form-check-label" for="blogModule">
+                                        Blog Module
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" {{ $user->userPermission->hasFellowshipModule() ? 'checked' : ''}} id="fellowshipModule" name="fellowshipModule">
+                                    <label class="form-check-label" for="fellowshipModule">
+                                        Fellowship Module
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" {{ $user->userPermission->hasConsultancyModule() ? 'checked' : ''}} id="ConsultancyModule" name="ConsultancyModule">
+                                    <label class="form-check-label" for="ConsultancyModule">
+                                        Consultancy Module
+                                    </label>
+                                </div>
+                            </div>
+
+                        </fieldset>
                     </div>
                     <div class="row">
                         <div class="col">

@@ -247,4 +247,46 @@ if(!function_exists('update_categories_for_blog')){
         return true;
     }
 }
+if(!function_exists('count_training_leads')){
+    function count_training_leads(){
+        $values = Sheets::spreadsheet('1O0ZkgTK8fGFsTgUG9QeqhUpIw5NX0WbukDCWkzPq6ls')->sheet('TrainingLeads')->all();
+        $count = count($values) - 1;
+        return $count;
+    }
+}
+if(!function_exists('count_fellowship_leads')){
+    function count_fellowship_leads(){
+        $values = Sheets::spreadsheet('1O0ZkgTK8fGFsTgUG9QeqhUpIw5NX0WbukDCWkzPq6ls')->sheet('FellowshipLeads')->all();
+        $count = count($values) - 1;
+        return $count;
+    }
+}
+if(!function_exists('count_consultancy_leads')){
+    function count_consultancy_leads(){
+        $values = Sheets::spreadsheet('1O0ZkgTK8fGFsTgUG9QeqhUpIw5NX0WbukDCWkzPq6ls')->sheet('ConsultancyLeads')->all();
+        $count = count($values) - 1;
+        return $count;
+    }
+}
+if(!function_exists('count_startups_leads')){
+    function count_startups_leads(){
+        $values = Sheets::spreadsheet('1O0ZkgTK8fGFsTgUG9QeqhUpIw5NX0WbukDCWkzPq6ls')->sheet('Leads')->all();
+        $count = count($values) - 1;
+        return $count;
+    }
+}
+if(!function_exists('count_isp_leads')){
+    function count_isp_leads(){
+        $values = Sheets::spreadsheet('1O0ZkgTK8fGFsTgUG9QeqhUpIw5NX0WbukDCWkzPq6ls')->sheet('ISP Leads')->all();
+        $count = count($values) - 1;
+        return $count;
+    }
+}
+if(!function_exists('count_csr_leads')){
+    function count_csr_leads(){
+        $values = Sheets::spreadsheet('1O0ZkgTK8fGFsTgUG9QeqhUpIw5NX0WbukDCWkzPq6ls')->sheet('CSR Leads')->all();
+        $count = count($values) - 1;
+        return $count;
+    }
+}
 
