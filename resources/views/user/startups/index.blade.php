@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/startups.css')}}" />
     <link href="{{asset('/assets/css/loader.css')}}" rel="stylesheet">
-    
+
     <div id="preloader"></div>
 
 
@@ -23,7 +23,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/intlTelInput.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/intlTelInput.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/utils.js"></script>
-
+    <style>
+        ul li{
+            list-style-type: square;
+        }
+    </style>
 </head>
 
 <body>
@@ -451,6 +455,155 @@
 
         </div>
     </div>
+    <div class="container">
+        <div class="headingss pt-4">
+            <h2>Our Startups and Achievements</h2>
+        </div>
+        <div class="startup">
+            <p>Some of the coveted startups incubated at iHub DivyaSampark can be found as followed:</p>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-12 my-2">
+                <a href="https://www.ballice.in/" style="text-decoration: none;" target="_blank">
+                    <div class="card border-0 event-click-card p-2">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="{{asset('assets/img/ballice.jpg')}}" height="100px" width="240px" alt="">
+                            </div>
+                            <div class="col-8 px-4">
+                                <div class="event-click">
+                                    <h3>Ballice Smart Devices Pvt. Ltd</h3>
+                                    <ul>
+                                        <li>Best Start-up award at IIT Roorkee in India’s biggest renewable expo</li>
+                                        <li>The Best Entrepreneur of the year 2023 award on 18th September 2023 in Noida.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-12 my-2">
+                <a href="https://www.idrrnd.com/" style="text-decoration: none;" target="_blank">
+                    <div class="card border-0 event-click-card p-2">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="{{asset('assets/img/idr.jpg')}}" height="100px" width="240px" alt="">
+                            </div>
+                            <div class="col-8 px-4">
+                                <div class="event-click">
+                                    <h3>IDR R&D Development Pvt. Ltd</h3>
+                                    <ul>
+                                        <li>Winner in Sharda tech expo 2022 organised by DRDO and STARTIN UP</li>
+                                        <li>Secured all India position 3 in idex Indian navy challenge across India</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-12 my-2">
+                <a href="https://dheyatech.com/" style="text-decoration: none;" target="_blank">
+                    <div class="card border-0 event-click-card p-2">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="{{asset('assets/img/dheya.jpg')}}" height="100px" width="240px" alt="">
+                            </div>
+                            <div class="col-8 px-4">
+                                <div class="event-click">
+                                    <h3>Dheya Engineering Technologies Pvt. Ltd</h3>
+                                    <ul>
+                                        <li>Karnataka Start-up award under Elevate-2023 by Govt of Karnataka</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-12 my-2">
+                <a href="https://www.theteqbot.com/" style="text-decoration: none;" target="_blank">
+                    <div class="card border-0 event-click-card p-2">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="{{asset('assets/img/teqbot.jpg')}}" height="100px" width="240px" alt="">
+                            </div>
+                            <div class="col-8 px-4">
+                                <div class="event-click">
+                                    <h3>Teqbot Innovations Pvt. Ltd</h3>
+                                    <ul>
+                                        <li>Best Startup Award at UKUM 2023 received in Uttarakhand Udyog Mohatsav by Director, IITR.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-12 my-2">
+                <a href="https://www.jyomasolutions.com/" style="text-decoration: none;" target="_blank">
+                    <div class="card border-0 event-click-card p-2">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="{{asset('assets/img/jyoma.png')}}" height="100px" width="240px" alt="">
+                            </div>
+                            <div class="col-8 px-4">
+                                <div class="event-click">
+                                    <h3>Jyoma Solutions Pvt. Ltd</h3>
+                                    <ul>
+                                        <li>Winner of Start-up Uttarakhand Grand Challenge 2022.</li>
+                                        <li>Winner of the IDEX DISC 6 challenge rolled out by IOL for the Development of Gyro Chassis intended for use in the Gunner Sight of Tank T-90.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-12 my-2">
+                <a href="https://www.evigway.com/" style="text-decoration: none;" target="_blank">
+                    <div class="card border-0 event-click-card p-2">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="{{asset('assets/img/evigway.jpg')}}" height="100px" width="240px" alt="">
+                            </div>
+                            <div class="col-8 px-4">
+                                <div class="event-click">
+                                    <h3>Evigway Technologies Pvt. Ltd</h3>
+                                    <ul>
+                                        <li>Top 35 startup in Emerging Technologies by Ministry of Electronics & IT under Digi Week’22</li>
+                                        <li>Selected as top 5 companies in Road To Unicorn by Ministry of Electronics and IT(MeitY) & ESC</li>
+                                        <li>Selected as top 75 Deep Tech Startup in Digi Week 2022 by MeitY, Govt of India</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-12 my-2">
+                <a href="https://www.unscene.xyz/" style="text-decoration: none;" target="_blank">
+                    <div class="card border-0 event-click-card p-2">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="{{asset('assets/img/unseen.jpg')}}" height="100px" width="240px" alt="">
+                            </div>
+                            <div class="col-8 px-4">
+                                <div class="event-click">
+                                    <h3>Unscene Innovations Pvt. Ltd</h3>
+                                    <ul>
+                                        <li>Being awarded for their efforts towards the development of Indigenous technology using ArtificialIntelligence for the Defense by the Government of India.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -484,7 +637,7 @@
 
 
         });
-    </script> 
+    </script>
     <!-- Footer Start -->
     <div class="elementbggradient ">
         <footer class=" text-light mt-5 py-2">
