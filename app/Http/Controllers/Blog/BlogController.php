@@ -40,6 +40,11 @@ class BlogController extends Controller
         $blog = new Blog();
         $blog->title = $request->title;
         $blog->subtitle = $request->subtitle;
+        $blog->slug = str_replace(' ', '-', strtolower($request->title));
+        if (Blog::where('slug', $blog->slug)->exists()) {
+            return redirect()->back()->with('error', 'A blog with this title already exists!');
+        }
+        // dd($blog->slug);
         $blog->description = $request->description;
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -64,9 +69,15 @@ class BlogController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->with('error', 'Please fill all the required fields');
         }
-
+        $slug = str_replace(' ', '-', strtolower($request->title));
         $blog = Blog::find($request->id);
         $blog->title = $request->title;
+        if ($blog->slug != $slug) {
+            if (Blog::where('slug', $slug)->exists()) {
+                return redirect()->back()->with('error', 'A blog with this title already exists!');
+            }
+        }
+        $blog->slug = $slug;
         $blog->subtitle = $request->subtitle;
         $blog->description = $request->description;
         if ($request->hasFile('image')) {

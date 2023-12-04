@@ -69,6 +69,8 @@ Route::get('/verticals', [HomeController::class, 'verticals'])->name('verticals'
 
 Route::get('/ihub-blogs', [HomeController::class, 'blogs'])->name('ihub-blogs');
 Route::get('/ihub-blogs/{id}', [HomeController::class, 'showblog'])->name('show-blog');
+Route::get('/blog/{slug}', [HomeController::class, 'showblog'])->name('blog');
+
 
 Route::get('/verticals', [HomeController::class, 'verticals'])->name('verticals');
 Route::post('/contactus', [ContactController::class, 'contactus'])->name('contactus');

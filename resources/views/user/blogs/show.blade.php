@@ -379,24 +379,17 @@
 
     <div class="container py-5">
         <div class="headingss py-4">
-            <h2>Blogs</h2>
-            <!-- <p>HUB GOVERNING BOARD (HGB)</p> -->
+            <h2>{{$title}}</h2>
+            <p style="font-weight: 400; font-size: 1.5rem;">{{$subtitle}}</p>
         </div>
 
         <div class="row">
-            @foreach($blogs as $blog)
-            <div class="col-md-4">
-                <div class="card" style="width: 354px; height: 350px;">
-                    <a href="{{route('blog', ['slug' => $blog->slug])}}" style="text-decoration: none; color: black;">
-                        <img class="card-img-top" src="{{ asset('/public/uploads/blog/' . $blog->image) }}" width="354px" height="199px" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ \Illuminate\Support\Str::limit($blog->title, 80) }}</h5>
-                            <p class="card-text">{{ \Illuminate\Support\Str::limit($blog->subtitle, 80) }}</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            @endforeach
+           <div class="col-12">
+                <img src="{{ asset('/public/uploads/blog/' . $image) }}" alt="">
+           </div>
+           <div class="col-12">
+            <p>{!! $description !!}</p>
+           </div>
 
         </div>
     </div>
