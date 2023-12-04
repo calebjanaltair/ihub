@@ -22,8 +22,7 @@
       <span class="navbar-brand mt-2" href="{{route('welcome')}}">
 
         <h1><a href="{{route('welcome')}}" class="logo"><img src="{{asset('/consultancy/assets/logo.png')}}" style="height: 45px; width: 55px;"></a>
-          <a href="{{route('welcome')}}" class="logo mt-3" style="color: #003E74;"> i<font color="#ff914d">HUB</font> Divya<font color="#003E74">Sampark
-            </font></a>
+          <a href="{{route('welcome')}}" class="logo mt-3" style="color: #003E74;"><font color="#003e74">i</font><font color="#ef6603">HUB</font> <font color="#003e74">Divya</font><font color="#ef6603">Sampark</font></a>
         </h1>
 
 
@@ -94,7 +93,7 @@
                 <svg width="20" height="20" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="m12.563 5.25 6.75 6.75-6.75 6.75"></path>
                   <path d="M18.375 12H4.687"></path>
-                </svg> Innovation Support
+                </svg> Technical Expertise
               </a>
             </div>
           </div>
@@ -104,7 +103,7 @@
                 <svg width="20" height="20" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="m12.563 5.25 6.75 6.75-6.75 6.75"></path>
                   <path d="M18.375 12H4.687"></path>
-                </svg> Research & Development
+                </svg> Market Research and Analysis
               </a>
             </div>
           </div>
@@ -114,7 +113,7 @@
                 <svg width="20" height="20" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="m12.563 5.25 6.75 6.75-6.75 6.75"></path>
                   <path d="M18.375 12H4.687"></path>
-                </svg> Entrepreneurship Development
+                </svg> Project Management
               </a>
             </div>
           </div>
@@ -315,7 +314,7 @@
         <div class="col-lg-8">
           <div class="address  pt-2">
             <p style="font-weight: 400; font-size: 12px;">
-              Hobbies Club, Indian Institute Of Technology–Roorkee (IIT–Roorkee),  iHUB DivyaSampark office, Roorkee, Uttarakhand 247667
+              Hobbies Club, Indian Institute Of Technology–Roorkee (IIT–Roorkee), iHUB DivyaSampark office, Roorkee, Uttarakhand 247667
             </p>
           </div>
         </div>
@@ -348,46 +347,46 @@
     <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content">
 
-        <div class="modal-body p-0">
+      <div class="modal-body p-0">
 
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-6 interestedouter p-4">
-                <div class="interested ">
-                  <!-- <h3>What is included in this course?</h3> -->
-                  <ul class="mx-auto my-auto">
-                    <li>Whether you are an entrepreneur, a researcher, or a business looking to innovate, iHub Divyasampark, IIT Roorkee, is your ideal partner.
-                    </li>
-                    <li>We are excited to work with you and help you achieve your goals.</li>
-                    <li> Contact us today to discuss how we can assist you on your journey towards success. Let's collaborate and bring your visions to life.</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-6 programformouter">
-                <div class="programform py-3">
-                  <h3 class="pb-2">What is included in this course?</h3>
-                  <form method="POST" action="{{route('consultancyRecord')}}">
-                    @csrf
-                    <div class="py-2">
-                      <input type="name" name="name" required class="form-control" id="exampleInputName" aria-describedby="name" placeholder="Full Name*">
-                    </div>
-                    <div class="py-2">
-                      <input id="phone" name="phone" required class="form-control" style="width: 100%;" type="tel" name="phone" />
-                    </div>
-                    <div class="py-2">
-                      <input type="email" name="email" required class="form-control" id="exampleInputName" aria-describedby="name" placeholder="Email*">
-                    </div>
-                    <div>
-                      <div class="submitbtn pt-3 text-center">
-                        <button type="submit">Download Curriculum</button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 interestedouter p-4">
+      <div class="interested ">
+        <!-- <h3>What is included in this course?</h3> -->
+        <ul class="mx-auto my-auto">
+          <li>Whether you are an entrepreneur, a researcher, or a business looking to innovate, iHub Divyasampark, IIT Roorkee, is your ideal partner.
+          </li>
+          <li>We are excited to work with you and help you achieve your goals.</li>
+          <li> Contact us today to discuss how we can assist you on your journey towards success. Let's collaborate and bring your visions to life.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-6 programformouter">
+      <div class="programform py-3">
+        <!-- <h3 class="pb-2">What is included in this course?</h3> -->
+        <form method="POST" action="{{route('consultancyRecord')}}">
+          @csrf
+          <div class="py-2">
+            <input type="name" name="name" required class="form-control" id="exampleInputName" aria-describedby="name" placeholder="Full Name*">
+          </div>
+          <div class="py-2">
+            <input id="phone" name="phone" required class="form-control" style="width: 100%;" type="tel" name="phone" />
+          </div>
+          <div class="py-2">
+            <input type="email" name="email" required class="form-control" id="exampleInputName" aria-describedby="name" placeholder="Email*">
+          </div>
+          <div>
+            <div class="submitbtn pt-3 text-center">
+              <button type="submit">Become A Part Of The Tribe!</button>
             </div>
           </div>
-        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
     </div>
   </div>
