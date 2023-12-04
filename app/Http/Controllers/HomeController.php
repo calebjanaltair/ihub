@@ -216,18 +216,20 @@ class HomeController extends Controller
         $blogs = blog_categories($blogs);
         return view('user.blogs.index', compact('blogs', 'navNews', 'fellowships', 'startups', 'verticals'));
     }
-    public function showOneBlog($slug){
+    public function showblog($slug){
+        // dd($slug);
         $navNews = navNews::first();
         $startups = startup::where('status', 1)->limit(4)->get();
         $fellowships = Fellowship::where('status', 1)->limit(4)->get();
         $verticals = Vertical::where('status', 1)->get();
         $blog = Blog::where('slug', $slug)->first();
         $title = $blog->title;
+        $subtitle = $blog->subtitle;
         $description = $blog->description;
         $image = $blog->image;
 
         $blogCategories = categories_of_blog($blog->id);
-        return view('user.blogs.show', compact('blog', 'title', 'fellowships', 'description', 'image', 'blogCategories', 'navNews', 'startups', 'verticals'));
+        return view('user.blogs.show', compact('blog', 'title', 'subtitle', 'fellowships', 'description', 'image', 'blogCategories', 'navNews', 'startups', 'verticals'));
     }
     public function index()
     {

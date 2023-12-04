@@ -350,6 +350,9 @@
       <div class="modal-body p-0">
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 5d2b4e10f2efdf8edc4e2a3d2c9d19b63a710777
           <div class="container">
             <div class="row">
               <div class="col-lg-6 interestedouter p-4">
@@ -365,7 +368,7 @@
               </div>
               <div class="col-lg-6 programformouter">
                 <div class="programform py-3">
-                  <!-- <h3 class="pb-2">What is included in this course?</h3> -->
+                  <h3 class="pb-2">What is included in this course?</h3>
                   <form method="POST" action="{{route('consultancyRecord')}}">
                     @csrf
                     <div class="py-2">
@@ -379,12 +382,14 @@
                     </div>
                     <div>
                       <div class="submitbtn pt-3 text-center">
-                        <button type="submit">Become A Part Of The Tribe!</button>
+                        <button type="submit">Download Curriculum</button>
                       </div>
                     </div>
                   </form>
                 </div>
               </div>
+<<<<<<< HEAD
+=======
 =======
 <div class="container">
   <div class="row">
@@ -417,14 +422,10 @@
             <div class="submitbtn pt-3 text-center">
               <button type="submit">Become A Part Of The Tribe!</button>
 >>>>>>> f68794a7766fb1c96d5fb29f75518baeb9a6a667
+>>>>>>> 5d2b4e10f2efdf8edc4e2a3d2c9d19b63a710777
             </div>
           </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+        </div>
       </div>
     </div>
   </div>
