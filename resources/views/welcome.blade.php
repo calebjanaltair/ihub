@@ -522,7 +522,7 @@
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <div class="hero">
-                                <img class="hero-image" src="{{asset('/assets/img/award.jpg')}}" alt="Background Image" />
+                                <img class="hero-image" src="{{asset('/assets/img/values.jpeg')}}" alt="Background Image" />
                                 <div class="col-12 mx-auto">
                                     <div class="overlay-card card rounded-0 m-0">
                                         <h1>OUR VALUES</h1>
@@ -548,7 +548,7 @@
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <div class="hero">
-                                <img class="hero-image" src="{{asset('/assets/img/ind.jpg')}}" alt="Background Image" />
+                                <img class="hero-image" src="{{asset('/assets/img/vision.jpeg')}}" alt="Background Image" />
                                 <div class="col-12 mx-auto">
                                     <div class="overlay-card card rounded-0 m-0">
                                         <h1>OUR VISION</h1>
@@ -574,7 +574,7 @@
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <div class="hero">
-                                <img class="hero-image" src="{{asset('/assets/img/stage.jpg')}}" alt="Background Image" />
+                                <img class="hero-image" src="{{asset('/assets/img/mission.jpeg')}}" alt="Background Image" />
                                 <div class="col-12 mx-auto">
                                     <div class="overlay-card card rounded-0 m-0">
                                         <h1>OUR MISSION</h1>
@@ -616,7 +616,7 @@
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
                 <div class="hero">
-                    <img class="hero-image" src="{{asset('/assets/img/award.jpg')}}" alt="Background Image" />
+                    <img class="hero-image" src="{{asset('/assets/img/values.jpeg')}}" alt="Background Image" />
                     <div class="col-8 mx-auto">
                         <div class="overlay-card card rounded-0">
                             <h1>OUR VALUES</h1>
@@ -631,7 +631,7 @@
             </div>
             <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
                 <div class="hero">
-                    <img class="hero-image" src="{{asset('/assets/img/ind.jpg')}}" alt="Background Image" />
+                    <img class="hero-image" src="{{asset('/assets/img/vision.jpeg')}}" alt="Background Image" />
                     <div class="col-8 mx-auto">
                         <div class="overlay-card card rounded-0">
                             <h1>OUR VISION</h1>
@@ -646,7 +646,7 @@
             </div>
             <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
                 <div class="hero">
-                    <img class="hero-image" src="{{asset('/assets/img/stage.jpg')}}" alt="Background Image" />
+                    <img class="hero-image" src="{{asset('/assets/img/mission.jpeg')}}" alt="Background Image" />
                     <div class="col-8 mx-auto">
                         <div class="overlay-card card rounded-0">
                             <h1>OUR MISSION</h1>
