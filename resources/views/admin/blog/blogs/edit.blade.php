@@ -84,6 +84,12 @@
 
                         </div>
                         <div class="mb-3">
+                            <label for="slug" class="form-label">
+                                <h4>Blog Slug</h4>
+                            </label>
+                            <input type="text" value="{{$blog->slug}}" class="form-control" disabled>
+                        </div>
+                        <div class="mb-3">
                             <label for="description" class="form-label">
                                 <h4>Blog Description</h4>
                             </label>

@@ -216,6 +216,19 @@ class HomeController extends Controller
         $blogs = blog_categories($blogs);
         return view('user.blogs.index', compact('blogs', 'navNews', 'fellowships', 'startups', 'verticals'));
     }
+    public function showOneBlog($slug){
+        $navNews = navNews::first();
+        $startups = startup::where('status', 1)->limit(4)->get();
+        $fellowships = Fellowship::where('status', 1)->limit(4)->get();
+        $verticals = Vertical::where('status', 1)->get();
+        $blog = Blog::where('slug', $slug)->first();
+        $title = $blog->title;
+        $description = $blog->description;
+        $image = $blog->image;
+
+        $blogCategories = categories_of_blog($blog->id);
+        return view('user.blogs.show', compact('blog', 'title', 'fellowships', 'description', 'image', 'blogCategories', 'navNews', 'startups', 'verticals'));
+    }
     public function index()
     {
         $date = date('d');
@@ -260,25 +273,15 @@ class HomeController extends Controller
         $verticals = Vertical::where('status', 1)->limit(4)->get();
         return view('welcome', compact('tickers', 'newses', 'hgbs', 'bods', 'navNews', 'startups', 'verticals', 'fellowships'));
     }
-    public function showblog($id)
-    {
-        $navNews = navNews::first();
-        $startups = startup::where('status', 1)->limit(4)->get();
-        $fellowships = Fellowship::where('status', 1)->limit(4)->get();
-        $verticals = Vertical::where('status', 1)->get();
-        $blog = Blog::where('id', $id)->first();
-        $title = $blog->title;
-        $description = $blog->description;
-        $image = $blog->image;
-
-        $blogCategories = categories_of_blog($id);
-        return view('user.blogs.show', compact('blog', 'title', 'fellowships', 'description', 'image', 'blogCategories', 'navNews', 'startups', 'verticals'));
-    }
 
     public function consultants()
     {
         $consultantservices = ConsultancyService::where('status', 1)->get();
         $whyuses = Whyus::where('status', 1)->get();
         return view('user.consultancy.index', compact('consultantservices', 'whyuses'));
+    }
+
+    public function tihBlogs(){
+        dd('tih blogs');
     }
 }

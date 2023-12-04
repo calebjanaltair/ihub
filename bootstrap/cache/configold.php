@@ -199,8 +199,8 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'E:\\iHub v4.0\\storage\\framework/cache/data',
-        'lock_path' => 'E:\\iHub v4.0\\storage\\framework/cache/data',
+        'path' => 'C:\\xampp\\htdocs\\iit\\storage\\framework/cache/data',
+        'lock_path' => 'C:\\xampp\\htdocs\\iit\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -373,13 +373,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'E:\\iHub v4.0\\storage\\app',
+        'root' => 'C:\\xampp\\htdocs\\iit\\storage\\app',
         'throw' => false,
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'E:\\iHub v4.0\\storage\\app/public',
+        'root' => 'C:\\xampp\\htdocs\\iit\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
         'throw' => false,
@@ -399,14 +399,14 @@
     ),
     'links' => 
     array (
-      'E:\\iHub v4.0\\public\\storage' => 'E:\\iHub v4.0\\storage\\app/public',
+      'C:\\xampp\\htdocs\\iit\\public\\storage' => 'C:\\xampp\\htdocs\\iit\\storage\\app/public',
     ),
   ),
   'google' => 
   array (
     'application_name' => '',
-    'client_id' => '899098217901-mc9dbnhttpv5nh0di1a5s9m3sm63juf8.apps.googleusercontent.com',
-    'client_secret' => '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',
+    'client_id' => '58428678869-48ui136u59rut3qk1c400jsgnr02odqb.apps.googleusercontent.com',
+    'client_secret' => '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',
     'redirect_uri' => '',
     'scopes' => 
     array (
@@ -419,7 +419,7 @@
     'service' => 
     array (
       'enable' => true,
-      'file' => 'E:\\iHub v4.0\\storage\\ihub-local-1697104284427-2f733c377d43.json',
+      'file' => 'C:\\xampp\\htdocs\\iit\\storage\\ihub-local-1697104284427-2f733c377d43.json',
     ),
     'config' => 
     array (
@@ -461,14 +461,14 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'E:\\iHub v4.0\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\iit\\storage\\logs/laravel.log',
         'level' => 'debug',
         'replace_placeholders' => true,
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'E:\\iHub v4.0\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\iit\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
         'replace_placeholders' => true,
@@ -533,7 +533,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'E:\\iHub v4.0\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\iit\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -546,11 +546,11 @@
       array (
         'transport' => 'smtp',
         'url' => NULL,
-        'host' => 'bzbeetech.com',
-        'port' => '465',
+        'host' => 'nsmtp.iitr.ac.in',
+        'port' => '587',
         'encryption' => 'tls',
-        'username' => 'support@bzbeetech.com',
-        'password' => '5sJfR+?,Gh]S',
+        'username' => 'operations1.tih@iitr.ac.in',
+        'password' => 'Arjun@1991',
         'timeout' => NULL,
         'local_domain' => NULL,
       ),
@@ -592,15 +592,15 @@
     ),
     'from' => 
     array (
-      'address' => 'managament@bzbeetech.com',
-      'name' => 'iHub DivyaSampark',
+      'address' => 'operations1.tih@iitr.ac.in',
+      'name' => 'Technology Innovation Hub (TIH)',
     ),
     'markdown' => 
     array (
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'E:\\iHub v4.0\\resources\\views/vendor/mail',
+        0 => 'C:\\xampp\\htdocs\\iit\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -712,7 +712,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'E:\\iHub v4.0\\storage\\framework/sessions',
+    'files' => 'C:\\xampp\\htdocs\\iit\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -732,9 +732,9 @@
   array (
     'paths' => 
     array (
-      0 => 'E:\\iHub v4.0\\resources\\views',
+      0 => 'C:\\xampp\\htdocs\\iit\\resources\\views',
     ),
-    'compiled' => 'E:\\iHub v4.0\\storage\\framework\\views',
+    'compiled' => 'C:\\xampp\\htdocs\\iit\\storage\\framework\\views',
   ),
   'image' => 
   array (
@@ -815,7 +815,7 @@
     array (
     ),
     'enable_runnable_solutions' => NULL,
-    'remote_sites_path' => 'E:\\iHub v4.0',
+    'remote_sites_path' => 'C:\\xampp\\htdocs\\iit',
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
     'settings_file_path' => '',

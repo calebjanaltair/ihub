@@ -347,8 +347,9 @@
     <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content">
 
-        <div class="modal-body p-0">
+      <div class="modal-body p-0">
 
+<<<<<<< HEAD
           <div class="container">
             <div class="row">
               <div class="col-lg-6 interestedouter p-4">
@@ -384,9 +385,46 @@
                   </form>
                 </div>
               </div>
+=======
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 interestedouter p-4">
+      <div class="interested ">
+        <!-- <h3>What is included in this course?</h3> -->
+        <ul class="mx-auto my-auto">
+          <li>Whether you are an entrepreneur, a researcher, or a business looking to innovate, iHub Divyasampark, IIT Roorkee, is your ideal partner.
+          </li>
+          <li>We are excited to work with you and help you achieve your goals.</li>
+          <li> Contact us today to discuss how we can assist you on your journey towards success. Let's collaborate and bring your visions to life.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-6 programformouter">
+      <div class="programform py-3">
+        <!-- <h3 class="pb-2">What is included in this course?</h3> -->
+        <form method="POST" action="{{route('consultancyRecord')}}">
+          @csrf
+          <div class="py-2">
+            <input type="name" name="name" required class="form-control" id="exampleInputName" aria-describedby="name" placeholder="Full Name*">
+          </div>
+          <div class="py-2">
+            <input id="phone" name="phone" required class="form-control" style="width: 100%;" type="tel" name="phone" />
+          </div>
+          <div class="py-2">
+            <input type="email" name="email" required class="form-control" id="exampleInputName" aria-describedby="name" placeholder="Email*">
+          </div>
+          <div>
+            <div class="submitbtn pt-3 text-center">
+              <button type="submit">Become A Part Of The Tribe!</button>
+>>>>>>> f68794a7766fb1c96d5fb29f75518baeb9a6a667
             </div>
           </div>
-        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </div>
     </div>
   </div>

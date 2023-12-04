@@ -386,16 +386,18 @@
         <div class="row">
             @foreach($blogs as $blog)
             <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="{{asset('/public/uploads/blog/' . $blog->image)}}" width="100%" height="auto" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$blog->title}}</h5>
-                        <p class="card-text">{{$blog->subtitle}}</p>
-                        <a class="cut-edge-button" data-bs-toggle="modal" data-bs-target="#Modal{{$blog->id}}">Read More</a>
-                    </div>
+                <div class="card" style="width: 354px; height: 350px;">
+                    <a href="" style="text-decoration: none; color: black;">
+                        <img class="card-img-top" src="{{ asset('/public/uploads/blog/' . $blog->image) }}" width="354px" height="199px" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ \Illuminate\Support\Str::limit($blog->title, 80) }}</h5>
+                            <p class="card-text">{{ \Illuminate\Support\Str::limit($blog->subtitle, 80) }}</p>
+                        </div>
+                    </a>
                 </div>
             </div>
             @endforeach
+
         </div>
     </div>
 
@@ -600,28 +602,7 @@
     </script>
 
     <!-- Modal -->
-    @foreach($blogs as $blog)
-    <div class="modal fade" id="Modal{{$blog->id}}" tabindex="-1" aria-labelledby="Modal{{$blog->id}}Label" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable ">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <!-- Add your content here -->
-                    <div class="row">
-                        <div class="col-6 mx-auto my-auto">
-                            <img src="{{asset('/public/uploads/blog/' . $blog->image)}}" width="600px" height="auto" alt="">
-                        </div>
-                        <div class="col-lg-12 my-4">
-                            <div class="about">
-                                <h2 class="card-title">{{$blog->title}}</h2>
-                                <p>{!! $blog->description !!}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    @endforeach
+
 </body>
 <script>
     $(window).on("load", function() {
