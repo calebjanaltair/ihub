@@ -70,8 +70,7 @@
 
       <div class="row">
         <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-          <img src="{{asset('/training-assets/assets/img/ihub.gif')}}" style="background-color: #2a2a72;
-background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);" class="img-fluid" alt="">
+          <img src="{{asset('/training-assets/assets/img/ihub.gif')}}" style="background-color: #003e74;" class="img-fluid" alt="">
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
           <h3>WHO WE ARE.</h3>
@@ -95,7 +94,7 @@ background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);" class="img-
   </section><!-- End About Section -->
 
   <!-- ======= Counts Section ======= -->
-  <section id="counts" class="counts section-bg">
+  <section id="counts" class="counts section-bg" style="background-color: #003e74 !important;">
     <div class="container">
 
       <div class="row counters">

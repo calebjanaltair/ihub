@@ -76,7 +76,7 @@
                         <div class="outer me-auto">
                             <h3>
 
-                                <a href="{{route('training')}}" class="logo"> i<font color="#ef6603">HUB</font> Divya<font color="#ef6603">Sampark</font></a>
+                                <a href="{{route('training')}}" class="logo"> <font color="white">i</font><font color="#ef6603">HUB</font> <font color="white">Divya</font><font color="#ef6603">Sampark</font></a>
                             </h3>
                         </div>
                         <p>
