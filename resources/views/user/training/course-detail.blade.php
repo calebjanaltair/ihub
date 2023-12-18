@@ -8,7 +8,7 @@
     <div class="container">
       <h2>Course Details</h2>
       <p>Learn from IIT Faculty & Industry Experts with Guaranteed Job Interviews.
-        Campus Immersion at IIT Roorkee. </p>
+        Campus Immersion at IIT Roorkee *. </p>
     </div>
   </div><!-- End Breadcrumbs -->
 
