@@ -13,12 +13,13 @@ class ContactController extends Controller
 {
     public function contact(Request $request)
     {
+        // dd("sending");
         $request->validate([
             // 'g-recaptcha-response' => 'required',
             'name' => 'required',
             'email' => 'required|email',
             'subject' => 'required',
-            'message' => 'required|min:10'
+            'message' => 'required'
         ]);
         $name = $request->name;
         $email = $request->email;
@@ -28,6 +29,7 @@ class ContactController extends Controller
         // Mail::to('arslanstack@gmail.com')->send(new ContactUsMail($name, $email, $subject, $message));
 
         // By Job
+        
         SendContactUsEmail::dispatch($name, $email, $subject, $message);
         return redirect()->back()->with('success', 'Your message has been sent successfully.');
     }

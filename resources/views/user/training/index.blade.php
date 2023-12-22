@@ -33,7 +33,7 @@
         @foreach($courses as $course)
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
           <div class="course-item">
-            <img src="./public/uploads/Courses/{{$course->image}}" class="img-fluid" alt="...">
+            <img src="./public/uploads/Courses/{{$course->image}}" class="img-fluid" style="width:100%; height: 250px; overflow: hidden;" alt="...">
             <div class="course-content">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <h4 class="{{$course->type == 1 ? 'different' : ''}}"> {{$course->type == 1 ? 'Certificate' : ' Internship'}}</h4>

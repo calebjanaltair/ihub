@@ -7,8 +7,7 @@
   <div class="breadcrumbs" data-aos="fade-in">
     <div class="container">
       <h2>Course Details</h2>
-      <p>Learn from IIT Faculty & Industry Experts with Guaranteed Job Interviews.
-        Campus Immersion at IIT Roorkee *. </p>
+      <p>Learn from IIT Faculty, Industry Experts & Campus Immersion at IIT Roorkee* (T/C Apply). </p>
     </div>
   </div><!-- End Breadcrumbs -->
 
@@ -27,7 +26,7 @@
           </div>
           <h3>{{$course->title}}</h3>
           <p>
-            {{$course->description}}
+            {!!  $course->description !!}
           </p>
           <div class="section-title">
             <h2>Our Students Rate This Course</h2>
@@ -111,11 +110,11 @@
                   <div class="pg-form-left-content">
                     <p><strong>What is included in this course?</strong></p>
                     <ul>
-                      <li>Non-biased career guidance</li>
-                      <li>Counselling based on your skills and preference</li>
+                      <li>Program Certificate form iHUB DivyaSamaprk, IIT Roorkee</li>
+                      <li>Live & Self Paced learning for better engagement</li>
                       <li>No repetitive calls, only as per convenience</li>
-                      <li>Rigorous curriculum designed by industry experts</li>
-                      <li>Complete this program while you work</li>
+                      <li>Opurtunity to meet your mentors through Campus Immersion</li>
+                      <li>25+ hand-on project with integrated labs</li>
                     </ul>
                   </div>
                 </div>
@@ -932,7 +931,7 @@
         @foreach($featureds as $featured)
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
           <div class="course-item">
-            <img src="{{asset('/public/uploads/Courses/' . $featured->image)}}" class="img-fluid" alt="...">
+            <img src="{{asset('/public/uploads/Courses/' . $featured->image)}}" style="width: 100%; height: 250px; overflow: hidden;" class="img-fluid" alt="...">
             <div class="course-content">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <h4 class="{{$featured->type == 1 ? 'different' : ''}}"> {{$featured->type == 1 ? 'Certificate' : ' Internship'}}</h4>

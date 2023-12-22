@@ -215,7 +215,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('consultants')}}" class="nav-link make">Consutancy</a>
+                        <a href="{{route('consultants')}}" class="nav-link make">Consultancy</a>
                     </li>
                     <li class="nav-item">
                         <a href="{{route('contact')}}" class="nav-link make">Contact Us</a>
@@ -406,7 +406,7 @@
 
                 <div class="card border-0 event-click-card p-2" data-bs-toggle="modal" data-bs-target="#exampleModal{{$startup->id}}">
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col-md-3 col-12 mb-2">
                             <img src="{{asset('/public/uploads/startup/poster/' . $startup->image)}}" width="100%" height="auto" alt="">
                         </div>
                         <div class="col-8 p-0">
@@ -468,10 +468,10 @@
                 <a href="https://www.ballice.in/" style="text-decoration: none;" target="_blank">
                     <div class="card border-0 event-click-card p-2">
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-md-3 col-12 mb-2">
                                 <img src="{{asset('assets/img/ballice.jpg')}}" height="100px" width="240px" alt="">
                             </div>
-                            <div class="col-8 px-4">
+                            <div class="col-md-9 col-12 px-4">
                                 <div class="event-click">
                                     <h3>Ballice Smart Devices Pvt. Ltd</h3>
                                     <ul>
@@ -488,10 +488,10 @@
                 <a href="https://www.idrrnd.com/" style="text-decoration: none;" target="_blank">
                     <div class="card border-0 event-click-card p-2">
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-md-3 col-12 mb-2">
                                 <img src="{{asset('assets/img/idr.jpg')}}" height="100px" width="240px" alt="">
                             </div>
-                            <div class="col-8 px-4">
+                            <div class="col-md-9 col-12 px-4">
                                 <div class="event-click">
                                     <h3>IDR R&D Development Pvt. Ltd</h3>
                                     <ul>
@@ -508,10 +508,10 @@
                 <a href="https://dheyatech.com/" style="text-decoration: none;" target="_blank">
                     <div class="card border-0 event-click-card p-2">
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-md-3 col-12 mb-2">
                                 <img src="{{asset('assets/img/dheya.jpg')}}" height="100px" width="240px" alt="">
                             </div>
-                            <div class="col-8 px-4">
+                            <div class="col-md-9 col-12 px-4">
                                 <div class="event-click">
                                     <h3>Dheya Engineering Technologies Pvt. Ltd</h3>
                                     <ul>
@@ -527,10 +527,10 @@
                 <a href="https://www.theteqbot.com/" style="text-decoration: none;" target="_blank">
                     <div class="card border-0 event-click-card p-2">
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-md-3 col-12 mb-2">
                                 <img src="{{asset('assets/img/teqbot.jpg')}}" height="100px" width="240px" alt="">
                             </div>
-                            <div class="col-8 px-4">
+                            <div class="col-md-9 col-12 px-4">
                                 <div class="event-click">
                                     <h3>Teqbot Innovations Pvt. Ltd</h3>
                                     <ul>
@@ -546,10 +546,10 @@
                 <a href="https://www.jyomasolutions.com/" style="text-decoration: none;" target="_blank">
                     <div class="card border-0 event-click-card p-2">
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-md-3 col-12 mb-2">
                                 <img src="{{asset('assets/img/jyoma.png')}}" height="100px" width="240px" alt="">
                             </div>
-                            <div class="col-8 px-4">
+                            <div class="col-md-9 col-12 px-4">
                                 <div class="event-click">
                                     <h3>Jyoma Solutions Pvt. Ltd</h3>
                                     <ul>
@@ -566,10 +566,10 @@
                 <a href="https://www.evigway.com/" style="text-decoration: none;" target="_blank">
                     <div class="card border-0 event-click-card p-2">
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-md-3 col-12 mb-2">
                                 <img src="{{asset('assets/img/evigway.jpg')}}" height="100px" width="240px" alt="">
                             </div>
-                            <div class="col-8 px-4">
+                            <div class="col-md-9 col-12 px-4">
                                 <div class="event-click">
                                     <h3>Evigway Technologies Pvt. Ltd</h3>
                                     <ul>
@@ -587,10 +587,10 @@
                 <a href="https://www.unscene.xyz/" style="text-decoration: none;" target="_blank">
                     <div class="card border-0 event-click-card p-2">
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-md-3 col-12 mb-2">
                                 <img src="{{asset('assets/img/unseen.jpg')}}" height="100px" width="240px" alt="">
                             </div>
-                            <div class="col-8 px-4">
+                            <div class="col-md-9 col-12 px-4">
                                 <div class="event-click">
                                     <h3>Unscene Innovations Pvt. Ltd</h3>
                                     <ul>

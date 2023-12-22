@@ -22,7 +22,7 @@ class ContactController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'subject' => 'required',
-            'message' => 'required|min:10'
+            'message' => 'required'
         ]);
         $name = $request->name;
         $email = $request->email;
@@ -42,7 +42,7 @@ class ContactController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'subject' => 'required',
-            'message' => 'required|min:10'
+            'message' => 'required'
         ]);
 
         $name = $request->name;

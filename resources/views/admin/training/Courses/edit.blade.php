@@ -185,7 +185,7 @@
                         <label class="form-label">
                             <h4>Course Description</h4>
                         </label>
-                        <textarea class="form-control" name="description" id="description" cols="30" rows="10">{{$course->description}}</textarea>
+                        <textarea class="form-control summernote" name="description" id="description" cols="30" rows="10">{{$course->description}}</textarea>
                     </div>
                     <button type="button" class="btn btn-primary" id="submitFakeButton" onclick="submitForm()">Save & Next</button>
                     <button type="submit" hidden>submit</button>
@@ -249,13 +249,27 @@
         </div>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="./../adminpanel/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="./../adminpanel/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
 <script>
     var cropper;
-
+    $(document).ready(function() {
+        $('.summernote').summernote({
+            tabsize: 2,
+            height: 250,
+            toolbar: [
+                ['font', ['bold', 'underline', 'clear']],
+                ['para', ['ul', 'ol']],
+                ['insert', ['link', 'picture']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ]
+        });
+    });
+</script>
+<!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="./../adminpanel/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="./../adminpanel/js/plugins/slimscroll/jquery.slimscroll.min.js"></script> -->
+<script>
     function validateImage(input) {
         if (input.files[0].size > 9048576) {
             input.classList.add('is-invalid')

@@ -12,53 +12,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <!-- Font Awesome 5 icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
+
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/vertical.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/hero.css')}}">
     <link href="{{asset('/assets/css/loader.css')}}" rel="stylesheet">
     <div id="preloader"></div>
     <style>
-        :root {
-            --card-bg: #003e74;
-            --border: 1px solid #3c3c3a;
-            --shadow: 0px 10px 15px 0.3px rgba(0, 0, 0, 0.411);
-            --text: #ff914d;
-            --sub-text: white;
-        }
-        .slider .card {
-            flex: 1;
-            margin: 0 10px;
-            background: var(--card-bg);
-            border: var(--border);
-            border-radius: 16px;
-            overflow: hidden;
-        }
-
-        .slider .card .img {
-            height: 200px;
-            margin: 16px;
-            width: calc(100% - 32px);
-            border-radius: 10px;
-            transition: all 0.2s ease;
-            overflow: hidden;
-        }
-
-        .slider .card .img:hover {
-            filter: brightness(75%);
-        }
-
-        .slider .card .img img {
-            height: 100%;
+        .card-img-top {
             width: 100%;
-            object-fit: cover;
-            transition: all 0.2s ease-in-out;
-        }
-
-        .slider .card .img img:hover {
-            transform: scale(1.1);
-            /* Scale up by 10% on hover */
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            height: 250px;
+            overflow: hidden;
         }
     </style>
 </head>
@@ -436,13 +400,12 @@
                 <!-- Slides -->
                 @foreach($verticals as $vertical)
                 <div class="swiper-slide">
-                    <div class="card board text-center ">
-                        <img src="./public/uploads/vertical/{{$vertical->image}}" class="card-img-top" alt="Image Alt Text">
-
-                        <div class="card-body proff-under">
-                            <h5 class="card-title">{{$vertical->name}}</h5>
-                            <p class="card-text">{{$vertical->subtitle}}</p>
-                            <button class="cut-edge-button" data-bs-toggle="modal" data-bs-target="#Modal{{$vertical->id}}">READ MORE</button>
+                    <div class="card">
+                        <img src="./public/uploads/vertical/{{$vertical->image}}" class="card-img-top" alt="...">
+                        <div class="card-body" style="background-color: #003e74;">
+                            <h5 class="card-title" style="color: #ff914d;">{{$vertical->name}}</h5>
+                            <h6 class="card-subtitle mb-2" style="color: white;">{{$vertical->subtitle}}</h6>
+                            <p class="card-text" style="color: white;">{!! substr($vertical->description,0,120) !!} ... <strong><a data-bs-toggle="modal" style="cursor: pointer;" data-bs-target="#Modal{{$vertical->id}}" style="color: #ff914d;">Read More</a></strong></p>
                         </div>
                     </div>
                 </div>
@@ -616,32 +579,21 @@
                         <p class="m-0">Follow </p>
                     </div>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/Divyasampark?mibextid=eHce3h" target="_blank">
-                            <svg width="40" height="40" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M22.5 12.063c0-5.799-4.702-10.5-10.5-10.5s-10.5 4.7-10.5 10.5c0 5.24 3.84 9.584 8.86 10.373v-7.337H7.692v-3.037h2.666V9.75c0-2.63 1.568-4.085 3.966-4.085 1.15 0 2.351.205 2.351.205v2.584h-1.324c-1.304 0-1.712.81-1.712 1.64v1.97h2.912l-.465 3.036H13.64v7.337c5.02-.788 8.859-5.131 8.859-10.373Z" clip-rule="evenodd"></path>
-                            </svg>
-                        </a>
-                        <a href="https://x.com/divyasampark?s=20" target="_blank">
-                            <svg width="40" height="40" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M23.25 5.133a9.46 9.46 0 0 1-2.65.717 4.57 4.57 0 0 0 2.03-2.512c-.908.53-1.9.903-2.932 1.101A4.647 4.647 0 0 0 16.327 3c-2.55 0-4.615 2.034-4.615 4.542a4.37 4.37 0 0 0 .119 1.036A13.158 13.158 0 0 1 2.315 3.83a4.485 4.485 0 0 0-.627 2.283c0 1.574.821 2.967 2.062 3.782a4.57 4.57 0 0 1-2.1-.567v.056c0 2.204 1.595 4.036 3.704 4.454a4.752 4.752 0 0 1-1.216.159c-.291 0-.582-.028-.868-.085.587 1.805 2.294 3.118 4.315 3.155a9.356 9.356 0 0 1-6.835 1.88A13.063 13.063 0 0 0 7.816 21c8.501 0 13.146-6.923 13.146-12.928 0-.197-.006-.394-.015-.586a9.304 9.304 0 0 0 2.303-2.353Z">
-                                </path>
-                            </svg>
-                        </a>
-                        
-                        <a href="https://youtube.com/@ihubdivyasampark?si=VVsWkEMnFEYYbfF9" target="_blank">
-                            <svg width="40" height="40" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M23.843 6.975c0-2.11-1.552-3.807-3.469-3.807A170.465 170.465 0 0 0 12.422 3h-.844c-2.7 0-5.353.047-7.95.169-1.912 0-3.464 1.706-3.464 3.815A69.732 69.732 0 0 0 0 11.99a72.582 72.582 0 0 0 .16 5.011c0 2.11 1.551 3.82 3.464 3.82 2.728.127 5.526.183 8.372.178 2.85.01 5.64-.05 8.371-.178 1.918 0 3.47-1.71 3.47-3.82a72.41 72.41 0 0 0 .159-5.016 68.19 68.19 0 0 0-.153-5.01Zm-14.14 9.614V7.378L16.5 11.98l-6.797 4.608Z">
-                                </path>
-                            </svg>
-                        </a>
-                        
-                        <a href="https://www.linkedin.com/company/divyasampark-ihub-roorkee-for-devices-materials-and-technology-foundation/mycompany/" target="_blank">
-                            <svg width="40" height="40" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.82 1.5H3.294c-.957 0-1.794.69-1.794 1.635v17.566c0 .951.837 1.799 1.794 1.799h17.521c.963 0 1.685-.854 1.685-1.8V3.136c.006-.946-.722-1.635-1.68-1.635ZM8.01 19.005H5V9.65h3.01v9.354ZM6.61 8.228h-.022c-.963 0-1.586-.716-1.586-1.613C5.002 5.7 5.642 5 6.626 5c.984 0 1.587.695 1.608 1.614 0 .897-.624 1.613-1.625 1.613Zm12.395 10.777h-3.009V13.89c0-1.225-.438-2.063-1.526-2.063-.832 0-1.324.563-1.543 1.111-.082.197-.104.465-.104.739v5.328H9.815V9.65h3.008v1.301c.438-.623 1.122-1.52 2.713-1.52 1.975 0 3.469 1.301 3.469 4.108v5.465Z">
-                                </path>
-                            </svg>
-                        </a>
-                        
+                        <svg width="40" height="40" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M22.5 12.063c0-5.799-4.702-10.5-10.5-10.5s-10.5 4.7-10.5 10.5c0 5.24 3.84 9.584 8.86 10.373v-7.337H7.692v-3.037h2.666V9.75c0-2.63 1.568-4.085 3.966-4.085 1.15 0 2.351.205 2.351.205v2.584h-1.324c-1.304 0-1.712.81-1.712 1.64v1.97h2.912l-.465 3.036H13.64v7.337c5.02-.788 8.859-5.131 8.859-10.373Z" clip-rule="evenodd"></path>
+                        </svg>
+                        <svg width="40" height="40" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.25 5.133a9.46 9.46 0 0 1-2.65.717 4.57 4.57 0 0 0 2.03-2.512c-.908.53-1.9.903-2.932 1.101A4.647 4.647 0 0 0 16.327 3c-2.55 0-4.615 2.034-4.615 4.542a4.37 4.37 0 0 0 .119 1.036A13.158 13.158 0 0 1 2.315 3.83a4.485 4.485 0 0 0-.627 2.283c0 1.574.821 2.967 2.062 3.782a4.57 4.57 0 0 1-2.1-.567v.056c0 2.204 1.595 4.036 3.704 4.454a4.752 4.752 0 0 1-1.216.159c-.291 0-.582-.028-.868-.085.587 1.805 2.294 3.118 4.315 3.155a9.356 9.356 0 0 1-6.835 1.88A13.063 13.063 0 0 0 7.816 21c8.501 0 13.146-6.923 13.146-12.928 0-.197-.006-.394-.015-.586a9.304 9.304 0 0 0 2.303-2.353Z">
+                            </path>
+                        </svg>
+                        <svg width="40" height="40" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.843 6.975c0-2.11-1.552-3.807-3.469-3.807A170.465 170.465 0 0 0 12.422 3h-.844c-2.7 0-5.353.047-7.95.169-1.912 0-3.464 1.706-3.464 3.815A69.732 69.732 0 0 0 0 11.99a72.582 72.582 0 0 0 .16 5.011c0 2.11 1.551 3.82 3.464 3.82 2.728.127 5.526.183 8.372.178 2.85.01 5.64-.05 8.371-.178 1.918 0 3.47-1.71 3.47-3.82a72.41 72.41 0 0 0 .159-5.016 68.19 68.19 0 0 0-.153-5.01Zm-14.14 9.614V7.378L16.5 11.98l-6.797 4.608Z">
+                            </path>
+                        </svg>
+                        <svg width="40" height="40" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.82 1.5H3.294c-.957 0-1.794.69-1.794 1.635v17.566c0 .951.837 1.799 1.794 1.799h17.521c.963 0 1.685-.854 1.685-1.8V3.136c.006-.946-.722-1.635-1.68-1.635ZM8.01 19.005H5V9.65h3.01v9.354ZM6.61 8.228h-.022c-.963 0-1.586-.716-1.586-1.613C5.002 5.7 5.642 5 6.626 5c.984 0 1.587.695 1.608 1.614 0 .897-.624 1.613-1.625 1.613Zm12.395 10.777h-3.009V13.89c0-1.225-.438-2.063-1.526-2.063-.832 0-1.324.563-1.543 1.111-.082.197-.104.465-.104.739v5.328H9.815V9.65h3.008v1.301c.438-.623 1.122-1.52 2.713-1.52 1.975 0 3.469 1.301 3.469 4.108v5.465Z">
+                            </path>
+                        </svg>
                     </div>
                     <div class="text-white">
                         <p> iHUB DivyaSampark- A joint initiative of the Government of India Department of Science & Technology (DST) and Indian Institute of Technology (IIT Roorkee).
@@ -689,7 +641,7 @@
                     <div class="row">
                         <div class="col-lg-6 my-1">
                             <div class="about">
-                                <p>{{$vertical->description}}</p>
+                                <p>{!! $vertical->description !!}</p>
                             </div>
                         </div>
                         <div class="col-lg-6">

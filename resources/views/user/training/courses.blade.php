@@ -13,6 +13,11 @@
     border: 1px solid #ccc;
     border-radius: 5px;
   }
+  .card-img-top {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+  }
 </style>
 <main id="main" data-aos="fade-in">
 
@@ -44,9 +49,9 @@
       <div class="row" data-aos="zoom-in" data-aos-delay="100">
 
         @foreach($courses as $course)
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="col-lg-4 col-md-6 mt-4 d-flex align-items-stretch">
           <div class="course-item">
-            <img src="{{asset('/public/uploads/Courses/' . $course->image)}}" class="img-fluid" alt="...">
+            <img src="{{asset('/public/uploads/Courses/' . $course->image)}}" class="card-img-top" alt="...">
             <div class="course-content">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <h4 class="{{$course->type == 1 ? 'different' : ''}}"> {{$course->type == 1 ? 'Certificate' : ' Internship'}}</h4>
